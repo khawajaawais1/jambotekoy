@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "title": "Jambotek Oy — Huippuluokan autokorjaamo · Jyväskylä",
+    "description": "Sertifioitu riippumaton autokorjaamo Jyväskylässä. Vianmääritys, renkaat, linjaus, huollot ja korjaukset eurooppalaisille autoille. Aina valmiina auttamaan."
+  },
+  "booking": {
+    "selectDate": "Valitse päivä",
+    "selectTime": "Valitse aika",
+    "noSlotsLeft": "Ei vapaita aikoja tälle päivälle.",
+    "loadingAvailability": "Ladataan saatavuutta…",
+    "reasonLabel": "Käynnin syy",
+    "confirmButton": "Vahvista varaus",
+    "confirmingButton": "Vahvistetaan…",
+    "confirmedTitle": "Varaus vahvistettu!",
+    "confirmedBody": "Lähetimme vahvistuksen sähköpostiisi. Nähdään {date} klo {time}.",
+    "bookAnother": "Tee uusi varaus",
+    "conflictError": "Tämä aika varattiin juuri. Valitse toinen aika.",
+    "genericError": "Varausta ei voitu tallentaa. Yritä uudelleen tai soita meille.",
+    "pickSlotError": "Valitse ensin päivä ja aika.",
+    "loadErrorRetry": "Saatavuutta ei voitu ladata. Yritä uudelleen"
+  },
+  "metaAbout": {
+    "title": "Meistä — Jambotek Oy",
+    "description": "Tutustu Jambotek Oy:hyn — jyväskyläläiseen riippumattomaan autokorjaamoon, jonka perusti mestariasentaja Joseph Kiuna Kamau."
+  },
+  "metaServices": {
+    "title": "Palvelut — Jambotek Oy",
+    "description": "Kattavat autokorjaamopalvelut Jyväskylässä: vianmääritys, renkaat, linjaus, jarrut, huollot ja korjaukset."
+  },
+  "metaContact": {
+    "title": "Yhteystiedot — Jambotek Oy",
+    "description": "Varaa huoltoaika, kysy lisää tai löydä reitti Jambotek Oy:lle Jyväskylässä."
+  },
+  "nav": {
+    "home": "Etusivu",
+    "services": "Palvelut",
+    "about": "Meistä",
+    "contact": "Yhteystiedot",
+    "bookService": "Varaa aika",
+    "homeAriaLabel": "Jambotek Oy etusivulle",
+    "menuAriaLabel": "Valikko"
+  },
+  "footer": {
+    "description": "Sertifioitu riippumaton autokorjaamo eurooppalaisille autoille. Tarkkaa vianmääritystä, rehellisiä tarjouksia, saman päivän korjauksia. Toimipaikka Jyväskylässä.",
+    "exploreTitle": "Selaa",
+    "contactTitle": "Yhteystiedot",
+    "hoursTitle": "Aukioloajat",
+    "hours1": "Ma–Pe · 08:00–17:00",
+    "hours2": "La · Sopimuksen mukaan",
+    "hours3": "Su · Suljettu",
+    "copyright": "© {year} Jambotek Oy · Jyväskylä",
+    "tagline": "Aina valmiina auttamaan"
+  },
+  "hero": {
+    "liveStatus": "Nyt auki · Jyväskylä",
+    "est": "Perustettu 2023",
+    "line1": "Rakennettu",
+    "line2": "suoriutumaan.",
+    "line3": "Kestämään.",
+    "subtitle": "Sertifioitu riippumaton korjaamo eurooppalaisille autoille — vianmääritys, renkaat, linjaus ja täyshuolto mestaritason asentajien tekemänä. Aina valmiina auttamaan.",
+    "ctaBook": "Varaa huolto",
+    "ctaExplore": "Katso palvelut",
+    "openToday": "Avoinna tänään",
+    "certified": "EureCar-sertifioitu",
+    "rating": "★ 4,9 keskiarvo",
+    "cardAlt": "BMW Jambotek Oy:llä — Halli 04",
+    "diagnosticInProgress": "Vianmääritys käynnissä",
+    "bay": "Halli 04",
+    "bayMeta": "BMW · Täyshuolto",
+    "live": "Suorana",
+    "recording": "Tallentaa",
+    "scroll": "Vieritä"
+  },
+  "brandMarquee": {
+    "items": ["BMW", "Mercedes-Benz", "Volkswagen", "Aina valmiina auttamaan", "Audi", "Volvo", "Škoda", "Toyota", "Vuodesta 2023"]
+  },
+  "serviceShowcase": {
+    "eyebrow": "Mitä teemme",
+    "headlinePlain": "Kattavaa huoltoa,",
+    "headlineItalic": "suunniteltu",
+    "headlineEnd": "kestämään.",
+    "subtitle": "Rutiinihuolloista aina modernin elektroniikan vianmääritykseen — jokainen työ käy läpi tarkistuslistamme ennen kuin saat avaimet takaisin.",
+    "seeAll": "Katso kaikki palvelut",
+    "bookNow": "Varaa nyt",
+    "nowViewing": "Nyt näytöllä",
+    "starting": "Alkaen",
+    "services": [
+      { "num": "01", "title": "Vianmääritys", "accent": "& ECU", "body": "Vikakoodien luku, reaaliaikaiset data-tarkistukset ja kalibrointi BMW-, Mercedes-, VW-konsernin ja Volvo-järjestelmiin.", "price": "alk. 45 €" },
+      { "num": "02", "title": "Renkaat", "accent": "& linjaus", "body": "Kausivaihdot, HPA-tietokoneohjattu linjaus, tasapainotus ja uusien renkaiden myynti.", "price": "alk. 39 €" },
+      { "num": "03", "title": "Täys", "accent": "huolto", "body": "Öljyt, suodattimet, jarrut, jakohihna, jousitus, jäähdytys — ajallaan tai tarpeen mukaan, kunnolla tehtynä.", "price": "alk. 89 €" },
+      { "num": "04", "title": "Ostoauton", "accent": "tarkastus", "body": "Riippumaton tarkastus harkitsemallesi autolle — kirjallinen raportti kuvineen ja kustannusarvioineen.", "price": "alk. 120 €" }
+    ]
+  },
+  "workshopGallery": {
+    "eyebrow": "Korjaamon sisällä",
+    "headlinePlain": "Halli, jossa",
+    "headlineItalic": "ongelmat ratkeavat.",
+    "subtitle": "Moderni riippumaton korjaamo ammattinostureilla, HPA-pyöränlinjauksella ja diagnostiikkalaitteilla jokaiselle eurooppalaiselle merkille.",
+    "tiles": [
+      { "tag": "Halli 01", "title": "Täysi", "accent": "nosto" },
+      { "tag": "Halli 02", "title": "Rengas", "accent": "palvelu" },
+      { "tag": "Halli 03", "title": "HPA", "accent": "linjaus" },
+      { "tag": "Sisäänkäynti", "title": "Rakennus", "accent": "nro 4" },
+      { "tag": "Halli 04", "title": "Valmiina", "accent": "ajoon" }
+    ]
+  },
+  "statsGrid": {
+    "carsServiced": "Huollettua autoa",
+    "yearsExperience": "Vuoden kokemus",
+    "repeatCustomers": "Palaavaa asiakasta",
+    "googleRating": "Google-arvosana"
+  },
+  "storyBlock": {
+    "eyebrow": "Tarina",
+    "headlinePlain": "Yksi korjaamo.",
+    "headlineItalic": "Yksi lupaus.",
+    "paragraph": "Jambotek Oy on riippumaton autokorjaamo, jonka perusti <b>Joseph Kiuna Kamau</b>, EureCar-sertifioitu mestariasentaja Jyväskylästä. Jokainen huolto kulkee samojen käsien kautta — vastaanottopuhelusta viimeiseen koeajoon.",
+    "yearsBadge": "15+",
+    "yearsBadgeLabel": "Vuoden kokemus",
+    "certifiedBadgeLabel": "Sertifioitu",
+    "certifiedBadgeValue": "EureCar-mestari",
+    "bullets": [
+      "EureCar & AD Finland -sertifioitu mestariasentaja",
+      "Koulutettu moderneihin sähkö- ja hybridivoimalinjoihin",
+      "Alkuperäiset & OEM-tason varaosat AD Finlandin kautta",
+      "Läpinäkyvät tarjoukset — ei töitä ilman hyväksyntää"
+    ],
+    "readStory": "Lue koko tarina"
+  },
+  "testimonials": {
+    "eyebrow": "Asiakkaidemme sanoin",
+    "headlinePlain": "Keski-Suomen kuljettajien",
+    "headlineItalic": "luottokorjaamo.",
+    "reviews": [
+      { "q": "Löysi vian, jonka neljä muuta korjaamoa oli jättänyt huomaamatta. Reilu hinta, rehellinen tarjous, työ valmis samana päivänä.", "who": "Mikko K.", "car": "BMW 540i · Jyväskylä" },
+      { "q": "Paras rengasvaihto, jonka olen Suomessa kokenut. Varasin netistä, sisällä ja ulkona 40 minuutissa. Tämä on nyt minun korjaamoni.", "who": "Anni H.", "car": "Volvo XC60 · Keski-Suomi" },
+      { "q": "Joseph selittää kaiken ennen kuin aloittaa. Lähdet tietäen tarkalleen, mitä tehtiin ja miksi.", "who": "Tuomas S.", "car": "Mercedes E-Class" },
+      { "q": "Soitin perjantaina, varasin lauantaiksi, sain auton maanantaina. Nopeaa, ammattimaista ja rehellisesti hinnoiteltua.", "who": "Petra L.", "car": "Audi A4 Avant" },
+      { "q": "Tuon tänne kaikki kolme perheeni autoa. Ei ole koskaan petetty.", "who": "Ari M.", "car": "VW / BMW / Toyota" },
+      { "q": "Alkuperäiset osat, merkkiliikkeen tasoinen työnjälki, riippumattoman korjaamon hinnat. Harvinainen yhdistelmä.", "who": "Sanna V.", "car": "BMW 320d Touring" }
+    ]
+  },
+  "locationCard": {
+    "eyebrow": "Käy tutustumassa",
+    "headlinePlain": "Aivan joen varrella",
+    "headlineItalic": "Jyväskylässä.",
+    "addressLabel": "Osoite",
+    "phoneLabel": "Puhelin",
+    "emailLabel": "Sähköposti",
+    "hoursLabel": "Aukioloajat",
+    "hoursValue": "Ma–Pe · 08:00–17:00\nLa sopimuksen mukaan · Su suljettu",
+    "getDirections": "Näytä reitti",
+    "callShop": "Soita korjaamoon",
+    "liveMap": "Kartta suorana"
+  },
+  "bigCTA": {
+    "headlinePlain": "Autosi ansaitsee",
+    "headlineItalic": "asiantuntijan.",
+    "subtitle": "Varaa aika netistä tai soita korjaamoon — useimmat korjaukset valmistuvat samana päivänä.",
+    "bookNow": "Varaa nyt"
+  },
+  "systemsReveal": {
+    "eyebrow": "Konepellin alla",
+    "headlinePlain": "Jokainen järjestelmä,",
+    "headlineItalic": "tarkastettu.",
+    "finaleHeadlinePlain": "Jokainen järjestelmä.",
+    "finaleHeadlineItalic": "Yksi asiantuntija.",
+    "bookService": "Varaa huolto",
+    "reveal": "Paljastus",
+    "stages": [
+      { "tag": "Näyte 01", "title": "Vianmääritys", "accent": "& ECU", "body": "Jokainen vikakoodi, reaaliaikainen anturidata ja kalibrointi — luettu ennen kuin yhtäkään pulttia avataan." },
+      { "tag": "Näyte 02", "title": "Renkaat", "accent": "& linjaus", "body": "HPA-tietokoneohjattu linjaus, tasapainotettu ja kiristetty tehdasarvoihin." },
+      { "tag": "Näyte 03", "title": "Täys", "accent": "huolto", "body": "Öljyt, jarrut, jousitus, jäähdytys — tarkastettu, uusittu, varmistettu." },
+      { "tag": "Näyte 04", "title": "Ostoauton", "accent": "tarkastus", "body": "Riippumaton toinen mielipide, kirjallisena, ennen kuin allekirjoitat mitään." }
+    ]
+  },
+  "aboutPage": {
+    "breadcrumb": "Meistä",
+    "headlinePlain": "Korjaamo, joka on rakennettu",
+    "headlineItalic": "luottamukselle.",
+    "intro": "Jambotek Oy on pieni, riippumaton autokorjaamo, jota pyörittävät autoja rakastavat ihmiset — ja jotka käyttävät aikaa korjatakseen ne kunnolla.",
+    "heroImageAlt": "Jambotek Oy — korjaamon autoja",
+    "storyEyebrow": "Tarina",
+    "storyHeadlinePlain": "Perustanut",
+    "storyHeadlineItalic": "mestariasentaja.",
+    "p1": "Jambotek Oy perustettiin vuonna <b>2023</b>, kun <b>Joseph Kiuna Kamau</b>, EureCar-sertifioitu mestariasentaja, jolla on yli vuosikymmenen kokemus eurooppalaisista merkeistä, avasi oman korjaamon. Vuosien jälkeen suurempien merkkiliikkeiden palveluksessa Joseph halusi tarjota jotain harvinaista alalla: rehellistä, merkkiliikkeen tasoista työtä riippumattoman korjaamon hinnoilla.",
+    "p2": "Korjaamo sijaitsee modernissa hallissa osoitteessa <b>Jokivarrentie 12, Jyväskylä</b> — ammattinosturit, HPA-pyöränlinjaus, rengasasennus- ja tasapainotuslaitteet sekä diagnostiikkalaitteet BMW:lle, Mercedes-Benzille, VW-konsernille, Volvolle ja muille.",
+    "p3": "Lupauksemme on yksinkertainen: katsomme auton, kerromme mitä se tarvitsee, annamme tarjouksen ennen kuin aloitamme, ja palautamme sen puhtaampana ja turvallisempana kuin se oli. <em>Aina valmiina auttamaan.</em>",
+    "cert1Title": "EureCar",
+    "cert1Desc": "Sertifioitu mestariasentaja (sähkö- ja hybridiautot)",
+    "cert2Title": "AD Finland",
+    "cert2Desc": "Hyväksytty verkostokumppani — varaosat & koulutus",
+    "cert3Title": "Bosch",
+    "cert3Desc": "Diagnostiikkalaitteet & kytkentädokumentaatio",
+    "bookService": "Varaa huolto"
+  },
+  "servicesPage": {
+    "breadcrumb": "Palvelut",
+    "headlinePlain": "Palvelut",
+    "headlineItalic": "& hinnasto",
+    "intro": "Kattava korjaamo saman katon alla — modernia vianmääritystä, renkaat ja linjaus, jarru- ja jousitustyöt sekä ajastetut huollot kaikille suurille eurooppalaisille merkeille.",
+    "heroImageAlt": "Jambotek Oy -korjaamo — täysi nostohalli",
+    "list": [
+      { "num": "01", "title": "Vianmääritys", "accent": "& ECU-skannaus", "body": "Vikakoodien luku, reaaliaikaiset data-tarkistukset, adaptaatio ja koodaus. Sisältää tulostetun raportin.", "price": "alk. 45 €", "meta": "per skannaus" },
+      { "num": "02", "title": "Öljy", "accent": "& suodatinhuolto", "body": "Täyssynteettinen öljy valmistajan spesifikaation mukaan, öljynsuodatin, huoltovälin nollaus ja turvatarkastus.", "price": "alk. 89 €", "meta": "ilman öljyä" },
+      { "num": "03", "title": "Kauden", "accent": "rengasvaihto", "body": "Pyörien vaihto, tasapainotus, kiristysmomentin tarkistus, TPMS-nollaus. Säilytys saatavilla.", "price": "alk. 39 €", "meta": "per sarja" },
+      { "num": "04", "title": "Pyörän", "accent": "linjaus (HPA)", "body": "4-pyöräinen tietokoneohjattu linjaus HPA-laitteistollamme — kallistus, camber ja caster säädetään tehdasarvoihin.", "price": "alk. 79 €", "meta": "per ajoneuvo" },
+      { "num": "05", "title": "Jarrut", "accent": "& levyt", "body": "Palojen ja levyjen uusinta, anturitarkistukset, hydraulinen ilmaus, jarrunesteen vaihto DOT4-spesifikaatioon.", "price": "alk. 149 €", "meta": "per akseli" },
+      { "num": "06", "title": "Hihna", "accent": "& ketju", "body": "Koko jakohihnasarjan vaihto mukaan lukien vesipumppu, kiristimet ja välipyörät tarvittaessa.", "price": "tarjouksesta", "meta": "auton mukaan" },
+      { "num": "07", "title": "Jousitus", "accent": "& ohjaus", "body": "Iskunvaimentimet, jouset, olkatapit, palloniveleet, holkit. Hiljainen, suora ja turvallinen — niin kuin pitääkin.", "price": "tarjouksesta", "meta": "tarkastuksen jälkeen" },
+      { "num": "08", "title": "Ilmastoinnin", "accent": "huolto", "body": "Kylmäaineen talteenotto ja täyttö, vuototarkistus, raitisilmasuodattimen uusinta — R134a ja R1234yf.", "price": "alk. 95 €", "meta": "sis. kaasun" },
+      { "num": "09", "title": "Ostoauton", "accent": "tarkastus", "body": "Täysi riippumaton tarkastus harkitsemallesi autolle. Kirjallinen raportti kuvineen ja arvioiduin korjauskustannuksin.", "price": "alk. 120 €", "meta": "raportti sisältyy" }
+    ]
+  },
+  "contactPage": {
+    "breadcrumb": "Yhteystiedot",
+    "headlinePlain": "Viedään sinut",
+    "headlineItalic": "tielle.",
+    "intro": "Varaa aika netistä, lähetä sähköpostia tai soita suoraan korjaamolle. Useimmat palvelut voidaan varata 2–3 arkipäivän sisällä.",
+    "heroImageAlt": "Jambotek Oy — korjaamon sisäänkäynti",
+    "getInTouchPlain": "Ota",
+    "getInTouchItalic": "yhteyttä.",
+    "addressLabel": "Osoite",
+    "phoneLabel": "Puhelin",
+    "emailLabel": "Sähköposti",
+    "hoursLabel": "Aukioloajat",
+    "hoursValue": "Ma–Pe · 08:00–17:00\nLa · Sopimuksen mukaan\nSu · Suljettu",
+    "foundedLabel": "Perustettu",
+    "foundedValue": "2023 · Y-tunnus rekisteröity",
+    "formNameLabel": "Nimesi",
+    "formNamePlaceholder": "Matti Meikäläinen",
+    "formPhoneLabel": "Puhelin",
+    "formEmailLabel": "Sähköposti",
+    "formCarLabel": "Ajoneuvo",
+    "formCarPlaceholder": "esim. BMW 540i 2019",
+    "formServiceLabel": "Palvelu",
+    "formServiceOptions": ["Vianmääritys & ECU-skannaus", "Öljy- & suodatinhuolto", "Kausirengasvaihto", "Pyörän linjaus", "Jarrut & levyt", "Jakohihna / -ketju", "Jousitus & ohjaus", "Ilmastointihuolto", "Ostotarkastus", "Jotain muuta"],
+    "formMessageLabel": "Viesti",
+    "formMessagePlaceholder": "Oireet, sopivat ajankohdat, muuta huomioitavaa…",
+    "submitIdle": "Lähetä pyyntö",
+    "submitSending": "Lähetetään…",
+    "submitSent": "✓ Pyyntö vastaanotettu",
+    "note": "Vastaamme yleensä samana arkipäivänä.",
+    "mapTitle": "Jambotek Oy Google Mapsissa"
+  },
+  "languageSwitcher": {
+    "fi": "FI",
+    "en": "EN"
+  }
+}

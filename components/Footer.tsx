@@ -1,7 +1,11 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/routing";
 import Logo from "./Logo";
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("footer");
+  const tNav = await getTranslations("nav");
+
   return (
     <footer className="bg-[#050505] border-t border-white/10 pt-20 pb-8" style={{ paddingLeft: "clamp(20px,4vw,48px)", paddingRight: "clamp(20px,4vw,48px)" }}>
       <div className="max-w-[1500px] mx-auto grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
@@ -13,16 +17,14 @@ export default function Footer() {
               <div className="text-[9px] tracking-[0.28em] mt-1 font-sans font-medium text-brand-glow/90">AINA VALMIINA AUTTAMAAN</div>
             </div>
           </Link>
-          <p className="text-ink-dim text-sm mt-5 max-w-xs">
-            Certified independent auto workshop for European cars. Precision diagnostics, honest quotes, same-day repairs. Based in Jyväskylä.
-          </p>
+          <p className="text-ink-dim text-sm mt-5 max-w-xs">{t("description")}</p>
         </div>
 
-        <FooterCol title="Explore" items={[
-          ["/", "Home"], ["/services", "Services"], ["/about", "About"], ["/contact", "Contact"]
+        <FooterCol title={t("exploreTitle")} items={[
+          ["/", tNav("home")], ["/services", tNav("services")], ["/about", tNav("about")], ["/contact", tNav("contact")]
         ]} />
 
-        <FooterCol title="Contact" custom={
+        <FooterCol title={t("contactTitle")} custom={
           <ul className="grid gap-3 text-sm text-ink-dim">
             <li><a href="tel:+358451824414" className="hover:text-brand-glow">045 182 4414</a></li>
             <li><a href="mailto:joekiuna@yahoo.com" className="hover:text-brand-glow">joekiuna@yahoo.com</a></li>
@@ -30,18 +32,18 @@ export default function Footer() {
           </ul>
         } />
 
-        <FooterCol title="Hours" custom={
+        <FooterCol title={t("hoursTitle")} custom={
           <ul className="grid gap-3 text-sm text-ink-dim">
-            <li>Mon – Fri · 08:00 – 17:00</li>
-            <li>Sat · By appointment</li>
-            <li>Sun · Closed</li>
+            <li>{t("hours1")}</li>
+            <li>{t("hours2")}</li>
+            <li>{t("hours3")}</li>
           </ul>
         } />
       </div>
 
       <div className="max-w-[1500px] mx-auto mt-14 pt-6 border-t border-white/10 flex flex-wrap justify-between gap-2 text-[11px] tracking-[0.08em] text-ink-mute">
-        <span>© {new Date().getFullYear()} Jambotek Oy · Jyväskylä, Finland</span>
-        <span>Aina valmiina auttamaan</span>
+        <span>{t("copyright", { year: new Date().getFullYear() })}</span>
+        <span>{t("tagline")}</span>
       </div>
     </footer>
   );

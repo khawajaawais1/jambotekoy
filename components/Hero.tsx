@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
 import { useRef, MouseEvent as ReactMouseEvent } from "react";
 
 export default function Hero() {
+  const t = useTranslations("hero");
   const ref = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -56,7 +58,12 @@ export default function Hero() {
 
       {/* Ghost background word */}
       <div className="absolute top-[62%] -translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none select-none whitespace-nowrap">
-        <span className="text-display-hero text-[24vw] leading-none text-white/[0.02] brand-pulse">JAMBOTEK</span>
+        <span
+          className="text-display-hero text-[24vw] leading-none text-white/[0.02]"
+          style={{ textShadow: "0 0 30px rgba(255,53,71,0.45), 0 0 60px rgba(225,29,46,0.35)" }}
+        >
+          JAMBOTEK
+        </span>
       </div>
 
       {/* ================== Content ================== */}
@@ -68,37 +75,37 @@ export default function Hero() {
             <span className="w-10 h-px bg-brand" />
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-brand blink-dot" />
-              Live · Jyväskylä · Finland
+              {t("liveStatus")}
             </span>
-            <span className="hidden sm:inline text-ink-mute">Est. 2023</span>
+            <span className="hidden sm:inline text-ink-mute">{t("est")}</span>
           </div>
 
           <h1 className="text-display-hero text-[13vw] sm:text-[10vw] lg:text-[9vw] xl:text-[8.6vw]">
-            <span className="block overflow-hidden"><span className="inline-block rise-1">Precision</span></span>
-            <span className="block overflow-hidden"><span className="inline-block rise-2">under the</span></span>
+            <span className="block overflow-hidden"><span className="inline-block rise-1">{t("line1")}</span></span>
+            <span className="block overflow-hidden"><span className="inline-block rise-2">{t("line2")}</span></span>
             <span className="block overflow-hidden">
-              <span className="inline-block rise-3 text-serif-italic text-brand-glow brand-pulse">hood.</span>
+              <span className="inline-block rise-3 text-serif-italic text-brand-glow brand-pulse">{t("line3")}</span>
             </span>
           </h1>
 
           <p className="mt-8 max-w-lg text-lg text-ink-dim leading-relaxed fade-1">
-            A certified independent workshop for European cars — diagnostics, tyres, alignment and full-service repair by Master-level technicians. Aina valmiina auttamaan.
+            {t("subtitle")}
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 fade-2">
             <Link href="/contact" className="group inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-[12px] tracking-[0.2em] uppercase font-semibold bg-brand text-white red-glow hover:-translate-y-0.5 transition-transform">
-              Book a Service
+              {t("ctaBook")}
               <svg viewBox="0 0 24 24" className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
             </Link>
             <Link href="/services" className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-[12px] tracking-[0.2em] uppercase font-semibold border border-white/25 hover:border-brand hover:text-brand-glow transition-colors">
-              Explore Services
+              {t("ctaExplore")}
             </Link>
           </div>
 
           <div className="mt-14 flex items-center gap-6 text-[11px] tracking-[0.24em] uppercase text-ink-mute fade-3">
-            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse-slow" />Open Today</span>
-            <span>EureCar Certified</span>
-            <span className="hidden sm:inline">★ 4.9 avg rating</span>
+            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse-slow" />{t("openToday")}</span>
+            <span>{t("certified")}</span>
+            <span className="hidden sm:inline">{t("rating")}</span>
           </div>
         </div>
 
@@ -131,7 +138,7 @@ export default function Hero() {
             <motion.div style={{ y, scale }} className="absolute inset-0">
               <Image
                 src="/images/hero-bmw.jpg"
-                alt="BMW at Jambotek Oy — Bay 04"
+                alt={t("cardAlt")}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 640px"
@@ -162,20 +169,20 @@ export default function Hero() {
             {/* Top-left HUD chip */}
             <div className="absolute top-6 left-6 z-10 glass px-3 py-1.5 rounded-full border border-white/15 text-[10px] tracking-[0.28em] uppercase text-white/90 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-glow blink-dot" />
-              <span className="typewrite">Diagnostic in progress</span>
+              <span className="typewrite">{t("diagnosticInProgress")}</span>
             </div>
 
             {/* Bottom overlay */}
             <div className="absolute inset-x-6 bottom-6 flex items-end justify-between text-[11px] tracking-[0.24em] uppercase text-white/85">
               <div>
-                <div className="text-display-hero text-[26px] tracking-[0.12em] text-white leading-none">Bay 04</div>
-                <div className="mt-2 text-white/60">BMW · Full Service</div>
+                <div className="text-display-hero text-[26px] tracking-[0.12em] text-white leading-none">{t("bay")}</div>
+                <div className="mt-2 text-white/60">{t("bayMeta")}</div>
               </div>
               <div className="text-right">
-                <div className="text-white/60">Live</div>
+                <div className="text-white/60">{t("live")}</div>
                 <div className="text-brand-glow flex items-center gap-1 justify-end">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-glow blink-dot" />
-                  Recording
+                  {t("recording")}
                 </div>
               </div>
             </div>
@@ -185,7 +192,7 @@ export default function Hero() {
 
       {/* Scroll cue */}
       <div className="absolute left-1/2 -translate-x-1/2 bottom-6 flex flex-col items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-ink-mute cue-fade">
-        <span>Scroll</span>
+        <span>{t("scroll")}</span>
         <span className="w-px h-10 bg-gradient-to-b from-brand to-transparent animate-pulse-slow" />
       </div>
     </section>

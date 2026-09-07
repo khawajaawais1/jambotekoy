@@ -1,1 +1,10 @@
 node_modules/
+
+# environment variables (contains real API keys / DB credentials)
+.env
+.env*.local
+.env.local.example
+
+
+# Next.js build output
+.next/

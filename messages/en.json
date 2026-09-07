@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "title": "Jambotek Oy — Precision Auto Workshop · Jyväskylä, Finland",
+    "description": "Certified independent auto workshop in Jyväskylä. Diagnostics, tyres, alignment, servicing and repairs for European cars. Aina valmiina auttamaan."
+  },
+  "booking": {
+    "selectDate": "Select a date",
+    "selectTime": "Select a time",
+    "noSlotsLeft": "No slots left for this day.",
+    "loadingAvailability": "Loading availability…",
+    "reasonLabel": "Reason for visit",
+    "confirmButton": "Confirm booking",
+    "confirmingButton": "Confirming…",
+    "confirmedTitle": "Booking confirmed!",
+    "confirmedBody": "We've sent a confirmation to your email. See you {date} at {time}.",
+    "bookAnother": "Make another booking",
+    "conflictError": "This slot was just taken. Please pick another.",
+    "genericError": "Could not save your booking. Please try again or call us.",
+    "pickSlotError": "Please pick a date and time first.",
+    "loadErrorRetry": "Couldn't load availability. Retry"
+  },
+  "metaAbout": {
+    "title": "About — Jambotek Oy",
+    "description": "Meet Jambotek Oy — an independent Jyväskylä workshop founded by master technician Joseph Kiuna Kamau."
+  },
+  "metaServices": {
+    "title": "Services — Jambotek Oy",
+    "description": "Complete auto workshop services in Jyväskylä: diagnostics, tyres, alignment, brakes, servicing and repair."
+  },
+  "metaContact": {
+    "title": "Contact — Jambotek Oy",
+    "description": "Book a service, ask a question, or find directions to Jambotek Oy in Jyväskylä."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "bookService": "Book Service",
+    "homeAriaLabel": "Jambotek Oy home",
+    "menuAriaLabel": "Menu"
+  },
+  "footer": {
+    "description": "Certified independent auto workshop for European cars. Precision diagnostics, honest quotes, same-day repairs. Based in Jyväskylä.",
+    "exploreTitle": "Explore",
+    "contactTitle": "Contact",
+    "hoursTitle": "Hours",
+    "hours1": "Mon – Fri · 08:00 – 17:00",
+    "hours2": "Sat · By appointment",
+    "hours3": "Sun · Closed",
+    "copyright": "© {year} Jambotek Oy · Jyväskylä, Finland",
+    "tagline": "Aina valmiina auttamaan"
+  },
+  "hero": {
+    "liveStatus": "Live · Jyväskylä · Finland",
+    "est": "Est. 2023",
+    "line1": "Built to",
+    "line2": "Perform.",
+    "line3": "Made to last.",
+    "subtitle": "A certified independent workshop for European cars — diagnostics, tyres, alignment and full-service repair by Master-level technicians. Aina valmiina auttamaan.",
+    "ctaBook": "Book a Service",
+    "ctaExplore": "Explore Services",
+    "openToday": "Open Today",
+    "certified": "EureCar Certified",
+    "rating": "★ 4.9 avg rating",
+    "cardAlt": "BMW at Jambotek Oy — Bay 04",
+    "diagnosticInProgress": "Diagnostic in progress",
+    "bay": "Bay 04",
+    "bayMeta": "BMW · Full Service",
+    "live": "Live",
+    "recording": "Recording",
+    "scroll": "Scroll"
+  },
+  "brandMarquee": {
+    "items": ["BMW", "Mercedes-Benz", "Volkswagen", "Always ready to help", "Audi", "Volvo", "Škoda", "Toyota", "Since 2023"]
+  },
+  "serviceShowcase": {
+    "eyebrow": "What we do",
+    "headlinePlain": "Full-service care,",
+    "headlineItalic": "engineered",
+    "headlineEnd": "to last.",
+    "subtitle": "From routine servicing to advanced diagnostics on modern electronics — every job passes through our checklist before you get the keys back.",
+    "seeAll": "See all services",
+    "bookNow": "Book now",
+    "nowViewing": "Now viewing",
+    "starting": "Starting",
+    "services": [
+      { "num": "01", "title": "Diagnostics", "accent": "& ECU", "body": "Fault-code reading, live-data checks and calibration on BMW, Mercedes, VW group and Volvo systems.", "price": "from 45€" },
+      { "num": "02", "title": "Tyres", "accent": "& alignment", "body": "Seasonal changeovers, HPA computer wheel-alignment, balancing and supply of new tyres.", "price": "from 39€" },
+      { "num": "03", "title": "Full", "accent": "service", "body": "Oil, filters, brakes, timing, suspension, cooling — scheduled or unscheduled, done properly.", "price": "from 89€" },
+      { "num": "04", "title": "Pre-purchase", "accent": "inspection", "body": "Independent inspection of a car you're considering — written report with photos and cost estimates.", "price": "from 120€" }
+    ]
+  },
+  "workshopGallery": {
+    "eyebrow": "Inside the workshop",
+    "headlinePlain": "The bay where",
+    "headlineItalic": "problems dissolve.",
+    "subtitle": "A modern independent workshop kitted out with professional lifts, HPA wheel-alignment and diagnostic hardware for every European brand.",
+    "tiles": [
+      { "tag": "Bay 01", "title": "Full", "accent": "lift" },
+      { "tag": "Bay 02", "title": "Tyre", "accent": "service" },
+      { "tag": "Bay 03", "title": "HPA", "accent": "alignment" },
+      { "tag": "Entrance", "title": "Building", "accent": "no. 4" },
+      { "tag": "Bay 04", "title": "Ready", "accent": "to roll" }
+    ]
+  },
+  "statsGrid": {
+    "carsServiced": "Cars serviced",
+    "yearsExperience": "Years experience",
+    "repeatCustomers": "Repeat customers",
+    "googleRating": "Google rating"
+  },
+  "storyBlock": {
+    "eyebrow": "The story",
+    "headlinePlain": "One workshop.",
+    "headlineItalic": "One promise.",
+    "paragraph": "Jambotek Oy is an independent auto workshop founded by <b>Joseph Kiuna Kamau</b>, a EureCar-certified master technician working out of Jyväskylä. Every service passes through the same hands — from the check-in call to the final road test.",
+    "yearsBadge": "15+",
+    "yearsBadgeLabel": "Years experience",
+    "certifiedBadgeLabel": "Certified",
+    "certifiedBadgeValue": "EureCar Master",
+    "bullets": [
+      "EureCar & AD Finland certified master technician",
+      "Trained on modern electric & hybrid drivetrains",
+      "Genuine & OEM-grade parts sourced through AD Finland",
+      "Transparent quotes — no work started without approval"
+    ],
+    "readStory": "Read the full story"
+  },
+  "testimonials": {
+    "eyebrow": "In the customers' words",
+    "headlinePlain": "Trusted by drivers",
+    "headlineItalic": "across Keski-Suomi.",
+    "reviews": [
+      { "q": "Diagnosed a fault four other shops missed. Fair price, honest quote, work finished the same day.", "who": "Mikko K.", "car": "BMW 540i · Jyväskylä" },
+      { "q": "Best tyre change I've had in Finland. Booked online, in and out in 40 minutes. My workshop now.", "who": "Anni H.", "car": "Volvo XC60 · Keski-Suomi" },
+      { "q": "Joseph explains everything before he starts. You walk out knowing exactly what was done and why.", "who": "Tuomas S.", "car": "Mercedes E-Class" },
+      { "q": "Called Friday, booked Saturday, delivered Monday. Fast, professional and priced honestly.", "who": "Petra L.", "car": "Audi A4 Avant" },
+      { "q": "I take all three of my family cars here. Never been let down once.", "who": "Ari M.", "car": "VW / BMW / Toyota" },
+      { "q": "Genuine parts, dealer-level workmanship, independent-shop pricing. Rare combination.", "who": "Sanna V.", "car": "BMW 320d Touring" }
+    ]
+  },
+  "locationCard": {
+    "eyebrow": "Visit us",
+    "headlinePlain": "Right by the river",
+    "headlineItalic": "in Jyväskylä.",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "hoursLabel": "Hours",
+    "hoursValue": "Mon – Fri · 08:00 – 17:00\nSat by appointment · Sun closed",
+    "getDirections": "Get directions",
+    "callShop": "Call the shop",
+    "liveMap": "Live map"
+  },
+  "bigCTA": {
+    "headlinePlain": "Your car deserves",
+    "headlineItalic": "a specialist.",
+    "subtitle": "Book online or call the workshop — most repairs completed the same day.",
+    "bookNow": "Book now"
+  },
+  "systemsReveal": {
+    "eyebrow": "Under the hood",
+    "headlinePlain": "Every system,",
+    "headlineItalic": "inspected.",
+    "finaleHeadlinePlain": "Every system.",
+    "finaleHeadlineItalic": "One specialist.",
+    "bookService": "Book a service",
+    "reveal": "Reveal",
+    "stages": [
+      { "tag": "Specimen 01", "title": "Diagnostics", "accent": "& ECU", "body": "Every fault code, live sensor stream and calibration — read before a single bolt turns." },
+      { "tag": "Specimen 02", "title": "Tyres", "accent": "& alignment", "body": "HPA computer alignment, balanced and torqued to factory spec." },
+      { "tag": "Specimen 03", "title": "Full", "accent": "service", "body": "Oil, brakes, suspension, cooling — inspected, renewed, verified." },
+      { "tag": "Specimen 04", "title": "Pre-purchase", "accent": "inspection", "body": "An independent second opinion, in writing, before you sign anything." }
+    ]
+  },
+  "aboutPage": {
+    "breadcrumb": "About",
+    "headlinePlain": "A workshop built",
+    "headlineItalic": "on trust.",
+    "intro": "Jambotek Oy is a small, independent auto workshop run by people who love cars — and take the time to fix them properly.",
+    "heroImageAlt": "Jambotek Oy — the workshop's cars",
+    "storyEyebrow": "The story",
+    "storyHeadlinePlain": "Founded by a",
+    "storyHeadlineItalic": "master technician.",
+    "p1": "Jambotek Oy was founded in <b>2023</b> by <b>Joseph Kiuna Kamau</b>, a EureCar-certified master technician with more than a decade of hands-on experience across European brands. After years working inside larger dealerships, Joseph opened Jambotek to offer something rare in the industry: honest, dealer-level workmanship at independent-shop pricing.",
+    "p2": "The workshop lives in a modern bay on <b>Jokivarrentie 12 in Jyväskylä</b> — professional lifts, HPA wheel-alignment, tyre-mounting and balancing equipment, and diagnostic hardware for BMW, Mercedes-Benz, VW Group, Volvo and more.",
+    "p3": "Our promise is simple: we look at the car, we tell you what it needs, we quote before we start, and we hand it back cleaner and safer than we found it. <em>Aina valmiina auttamaan.</em>",
+    "cert1Title": "EureCar",
+    "cert1Desc": "Certified Master Technician (EV & hybrid)",
+    "cert2Title": "AD Finland",
+    "cert2Desc": "Approved network partner — parts & training",
+    "cert3Title": "Bosch",
+    "cert3Desc": "Diagnostic hardware & wiring documentation",
+    "bookService": "Book a service"
+  },
+  "servicesPage": {
+    "breadcrumb": "Services",
+    "headlinePlain": "Services",
+    "headlineItalic": "& pricing",
+    "intro": "A complete workshop under one roof — modern diagnostics, tyres and alignment, brake and suspension work, plus scheduled servicing on all major European brands.",
+    "heroImageAlt": "Jambotek Oy workshop — full lift bay",
+    "list": [
+      { "num": "01", "title": "Diagnostics", "accent": "& ECU scan", "body": "Fault code read, live-data checks, adaptation and coding. Detailed printed report included.", "price": "from 45€", "meta": "per scan" },
+      { "num": "02", "title": "Oil", "accent": "& filter service", "body": "Full-synthetic oil to manufacturer spec, oil filter, reset of service interval and safety inspection.", "price": "from 89€", "meta": "excl. oil" },
+      { "num": "03", "title": "Seasonal", "accent": "tyre change", "body": "Wheel swap, balancing, torque check to spec, TPMS reset. Storage available.", "price": "from 39€", "meta": "per set" },
+      { "num": "04", "title": "Wheel", "accent": "alignment (HPA)", "body": "4-wheel computer alignment on our HPA rig — toe, camber and caster adjusted to factory spec.", "price": "from 79€", "meta": "per vehicle" },
+      { "num": "05", "title": "Brakes", "accent": "& discs", "body": "Pad and disc renewal, sensor checks, hydraulic bleed, brake-fluid change to DOT4 spec.", "price": "from 149€", "meta": "per axle" },
+      { "num": "06", "title": "Timing belt", "accent": "& chain", "body": "Full timing kit replacement including water pump, tensioners and idlers where recommended.", "price": "by quote", "meta": "vehicle-specific" },
+      { "num": "07", "title": "Suspension", "accent": "& steering", "body": "Shocks, springs, wishbones, ball joints, bushings. Silent, straight and safe — how it should be.", "price": "by quote", "meta": "after inspection" },
+      { "num": "08", "title": "Air-con", "accent": "service", "body": "Refrigerant recovery and recharge, leak check, cabin filter renewal — R134a and R1234yf.", "price": "from 95€", "meta": "incl. gas" },
+      { "num": "09", "title": "Pre-purchase", "accent": "inspection", "body": "Full independent inspection of a car you're considering. Written report with photos and estimated repair costs.", "price": "from 120€", "meta": "report included" }
+    ]
+  },
+  "contactPage": {
+    "breadcrumb": "Contact",
+    "headlinePlain": "Let's get you",
+    "headlineItalic": "on the road.",
+    "intro": "Book a slot online, drop us an email, or call the workshop directly. Most services can be booked within 2–3 working days.",
+    "heroImageAlt": "Jambotek Oy — workshop entrance",
+    "getInTouchPlain": "Get",
+    "getInTouchItalic": "in touch.",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "hoursLabel": "Hours",
+    "hoursValue": "Mon – Fri · 08:00 – 17:00\nSat · By appointment\nSun · Closed",
+    "foundedLabel": "Founded",
+    "foundedValue": "2023 · Y-tunnus registered",
+    "formNameLabel": "Your name",
+    "formNamePlaceholder": "Matti Meikäläinen",
+    "formPhoneLabel": "Phone",
+    "formEmailLabel": "Email",
+    "formCarLabel": "Vehicle",
+    "formCarPlaceholder": "e.g. BMW 540i 2019",
+    "formServiceLabel": "Service",
+    "formServiceOptions": ["Diagnostics & ECU scan", "Oil & filter service", "Seasonal tyre change", "Wheel alignment", "Brakes & discs", "Timing belt / chain", "Suspension & steering", "Air-con service", "Pre-purchase inspection", "Something else"],
+    "formMessageLabel": "Message",
+    "formMessagePlaceholder": "Symptoms, dates that work, anything else…",
+    "submitIdle": "Send request",
+    "submitSending": "Sending…",
+    "submitSent": "✓ Request received",
+    "note": "We usually reply the same working day.",
+    "mapTitle": "Jambotek Oy on Google Maps"
+  },
+  "languageSwitcher": {
+    "fi": "FI",
+    "en": "EN"
+  }
+}

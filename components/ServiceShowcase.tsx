@@ -2,48 +2,20 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
-const SERVICES = [
-  {
-    id: "diag",
-    num: "01",
-    title: "Diagnostics",
-    accent: "& ECU",
-    body: "Fault-code reading, live-data checks and calibration on BMW, Mercedes, VW group and Volvo systems.",
-    price: "from 45€",
-    img: "/images/svc-diagnostics.jpg"
-  },
-  {
-    id: "tyre",
-    num: "02",
-    title: "Tyres",
-    accent: "& alignment",
-    body: "Seasonal changeovers, HPA computer wheel-alignment, balancing and supply of new tyres.",
-    price: "from 39€",
-    img: "/images/svc-tyres.jpg"
-  },
-  {
-    id: "service",
-    num: "03",
-    title: "Full",
-    accent: "service",
-    body: "Oil, filters, brakes, timing, suspension, cooling — scheduled or unscheduled, done properly.",
-    price: "from 89€",
-    img: "/images/svc-service.jpg"
-  },
-  {
-    id: "insp",
-    num: "04",
-    title: "Pre-purchase",
-    accent: "inspection",
-    body: "Independent inspection of a car you're considering — written report with photos and cost estimates.",
-    price: "from 120€",
-    img: "/images/svc-inspection.jpg"
-  }
-];
+// Structural data (asset paths, stable ids) — kept out of the message
+// catalog since these don't change per locale, only the copy does.
+const IMAGES = ["/images/svc-diagnostics.jpg", "/images/bay-align-wide.jpg", "/images/svc-service.jpg", "/images/svc-inspection-2.jpg"];
+
+type Service = { num: string; title: string; accent: string; body: string; price: string };
 
 export default function ServiceShowcase() {
+  const t = useTranslations("serviceShowcase");
+  const services = t.raw("services") as Service[];
+  const SERVICES = services.map((s, i) => ({ ...s, id: String(i), img: IMAGES[i] }));
+
   const [active, setActive] = useState(SERVICES[0].id);
   const current = SERVICES.find((s) => s.id === active)!;
 
@@ -52,13 +24,13 @@ export default function ServiceShowcase() {
       <div className="max-w-[1500px] mx-auto">
         <div className="max-w-3xl mb-16">
           <div className="text-[11px] tracking-[0.3em] uppercase text-brand-glow mb-5 flex items-center gap-3">
-            <span className="text-brand">///</span> What we do
+            <span className="text-brand">///</span> {t("eyebrow")}
           </div>
           <h2 className="text-display-hero text-[clamp(42px,6.5vw,92px)] leading-none">
-            Full-service care, <span className="text-serif-italic text-brand-glow">engineered</span> to last.
+            {t("headlinePlain")} <span className="text-serif-italic text-brand-glow">{t("headlineItalic")}</span> {t("headlineEnd")}
           </h2>
           <p className="mt-7 text-lg text-ink-dim max-w-xl">
-            From routine servicing to advanced diagnostics on modern electronics — every job passes through our checklist before you get the keys back.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -95,7 +67,7 @@ export default function ServiceShowcase() {
                   </div>
                   <div className="text-right hidden sm:block">
                     <div className="text-display-hero text-xl">{s.price}</div>
-                    <div className="text-[10px] tracking-[0.2em] uppercase text-ink-mute">Starting</div>
+                    <div className="text-[10px] tracking-[0.2em] uppercase text-ink-mute">{t("starting")}</div>
                   </div>
                   <svg viewBox="0 0 24 24" className={`w-5 h-5 transition-all ${isActive ? "text-brand-glow translate-x-1" : "text-ink-mute"}`} fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
                 </button>
@@ -103,8 +75,8 @@ export default function ServiceShowcase() {
             })}
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/services" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-[11px] tracking-[0.22em] uppercase font-semibold hover:border-brand hover:text-brand-glow transition">See all services</Link>
-              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand text-white text-[11px] tracking-[0.22em] uppercase font-semibold red-glow hover:-translate-y-0.5 transition-transform">Book now</Link>
+              <Link href="/services" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-[11px] tracking-[0.22em] uppercase font-semibold hover:border-brand hover:text-brand-glow transition">{t("seeAll")}</Link>
+              <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand text-white text-[11px] tracking-[0.22em] uppercase font-semibold red-glow hover:-translate-y-0.5 transition-transform">{t("bookNow")}</Link>
             </div>
           </div>
 
@@ -125,7 +97,7 @@ export default function ServiceShowcase() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
             <div className="absolute inset-x-6 bottom-6 flex items-end justify-between">
               <div>
-                <div className="text-[10px] tracking-[0.28em] uppercase text-brand-glow">Now viewing</div>
+                <div className="text-[10px] tracking-[0.28em] uppercase text-brand-glow">{t("nowViewing")}</div>
                 <div className="text-display-hero text-[30px] leading-none mt-1">{current.title} <span className="text-serif-italic text-white/80">{current.accent}</span></div>
               </div>
               <div className="text-display-hero text-[46px] text-white/20">{current.num}</div>

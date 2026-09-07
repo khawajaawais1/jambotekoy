@@ -13,7 +13,14 @@ Drop your Jambotek Oy photos here using these exact filenames. The site referenc
 | `svc-diagnostics.jpg` | Close-up of a car receiving a diagnostic / ECU work | Services showcase — Diagnostics tab |
 | `svc-tyres.jpg` | Wheel/tyre being mounted | Services showcase — Tyres tab |
 | `svc-service.jpg` | Under-hood or lift shot for general servicing | Services showcase — Service tab |
-| `svc-inspection.jpg` | Joseph attaching alignment clamp / doing an inspection | Services showcase — Inspection tab |
+| `svc-inspection.jpg` | Joseph attaching alignment clamp / doing an inspection | Systems reveal — Pre-purchase capsule |
+| `svc-inspection-2.jpg` | Alternate inspection photo | Services showcase — Inspection tab |
+| `bay-front.jpg` | BMW 1-series front-on in the bay, doors open | Systems reveal — Full service capsule |
+| `bay-align-wide.jpg` | Wide shot down the HPA alignment rails toward a car on the lift | Systems reveal — Tyres capsule |
+| `hero-side.jpg` | BMW side profile | Gallery — Bay 04 tile |
+| `reveal-bmw-poster.png` | Still frame from `reveal-bmw.mp4`, used as its poster and as the reduced-motion fallback image | Systems reveal — finale |
+
+`public/videos/reveal-bmw.mp4` — white BMW 5-series on the HPA alignment rig, headlights on. Used as the looping finale reveal in the "Systems reveal" homepage section (skipped entirely for `prefers-reduced-motion`).
 
 Recommended:
 - 16:9 or 4:5 aspect works best; 2000px on the long edge is plenty.

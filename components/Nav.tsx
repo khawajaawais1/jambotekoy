@@ -1,22 +1,24 @@
 "use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, usePathname } from "@/i18n/routing";
 import Logo from "./Logo";
 import clsx from "clsx";
 
-const LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" }
-];
-
 export default function Nav() {
+  const t = useTranslations("nav");
+  const locale = useLocale();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const LINKS = [
+    { href: "/", label: t("home") },
+    { href: "/services", label: t("services") },
+    { href: "/about", label: t("about") },
+    { href: "/contact", label: t("contact") }
+  ];
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 40);
@@ -34,7 +36,7 @@ export default function Nav() {
       style={{ paddingLeft: "clamp(20px,4vw,48px)", paddingRight: "clamp(20px,4vw,48px)" }}
     >
       <div className="flex items-center justify-between max-w-[1500px] mx-auto">
-        <Link href="/" className="flex items-center gap-3 group" aria-label="Jambotek Oy home">
+        <Link href="/" className="flex items-center gap-3 group" aria-label={t("homeAriaLabel")}>
           <Logo className="w-10 group-hover:scale-105 transition-transform" />
           <div className="text-display-hero text-[18px] leading-none tracking-[0.14em]">
             JAMBOTEK <span className="text-brand-glow">OY</span>
@@ -63,11 +65,14 @@ export default function Nav() {
               </Link>
             );
           })}
+
+          <LanguageSwitcher pathname={pathname} locale={locale} className="ml-2" />
+
           <Link
             href="/contact"
             className="ml-2 inline-flex items-center gap-2 px-5 py-3 rounded-full text-[11px] tracking-[0.2em] uppercase font-semibold border border-white/20 hover:bg-brand hover:border-brand hover:text-white hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-16px_#E11D2E] transition-all"
           >
-            Book Service
+            {t("bookService")}
             <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
           </Link>
         </nav>
@@ -75,7 +80,7 @@ export default function Nav() {
         <button
           className="md:hidden w-10 h-10 border border-white/20 rounded-lg grid place-items-center"
           onClick={() => setOpen((s) => !s)}
-          aria-label="Menu"
+          aria-label={t("menuAriaLabel")}
         >
           <div className="w-4 h-3 relative">
             <span className={clsx("absolute inset-x-0 top-0 h-px bg-white transition-transform", open && "translate-y-1.5 rotate-45")} />
@@ -99,12 +104,36 @@ export default function Nav() {
                 {l.label}
               </Link>
             ))}
+            <LanguageSwitcher pathname={pathname} locale={locale} className="mt-2" />
             <Link href="/contact" onClick={() => setOpen(false)} className="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-brand text-white text-[12px] tracking-[0.2em] uppercase font-semibold">
-              Book Service
+              {t("bookService")}
             </Link>
           </motion.nav>
         )}
       </AnimatePresence>
     </header>
+  );
+}
+
+function LanguageSwitcher({ pathname, locale, className }: { pathname: string; locale: string; className?: string }) {
+  const t = useTranslations("languageSwitcher");
+  return (
+    <div className={clsx("flex items-center gap-1 text-[11px] tracking-[0.15em] font-semibold", className)}>
+      <Link
+        href={pathname}
+        locale="fi"
+        className={clsx("px-2 py-1 rounded-md transition-colors", locale === "fi" ? "text-brand-glow" : "text-ink-mute hover:text-white")}
+      >
+        {t("fi")}
+      </Link>
+      <span className="text-ink-mute/40">/</span>
+      <Link
+        href={pathname}
+        locale="en"
+        className={clsx("px-2 py-1 rounded-md transition-colors", locale === "en" ? "text-brand-glow" : "text-ink-mute hover:text-white")}
+      >
+        {t("en")}
+      </Link>
+    </div>
   );
 }
