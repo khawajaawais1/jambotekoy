@@ -8,7 +8,7 @@ export default function LocationCard() {
 
   return (
     <section className="relative py-32" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
-      <div className="max-w-[1500px] mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-10 items-stretch">
+      <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 items-stretch">
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.9 }} className="p-10 rounded-[24px] border border-white/10 bg-gradient-to-br from-white/[0.03] to-transparent">
           <div className="text-[11px] tracking-[0.3em] uppercase text-brand-glow mb-5 flex items-center gap-3">
             <span className="text-brand">///</span> {t("eyebrow")}

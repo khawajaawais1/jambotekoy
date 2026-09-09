@@ -67,7 +67,7 @@ export default function Hero() {
       </div>
 
       {/* ================== Content ================== */}
-      <div className="relative z-10 max-w-[1500px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-14 items-center pt-[140px] pb-24 min-h-[100svh]">
+      <div className="relative z-10 max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-center pt-[140px] pb-24 min-h-[100svh]">
         {/* Left column */}
         <div>
           {/* Live status ticker */}

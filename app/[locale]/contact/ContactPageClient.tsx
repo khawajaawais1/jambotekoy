@@ -22,7 +22,7 @@ export default function ContactPageClient() {
       <section className="pt-[180px] pb-20 relative overflow-hidden bg-[linear-gradient(150deg,#2a0a0d_0%,#0a0a0a_45%,#050505_100%)] border-b border-white/10" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
         <div className="absolute -top-40 left-1/3 w-[700px] h-[500px] rounded-full bg-brand/25 blur-[140px]" />
         <div className="absolute bottom-[-8rem] -right-32 w-[480px] h-[480px] rounded-full bg-brand-glow/15 blur-[130px]" />
-        <div className="relative max-w-[1500px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-14 items-center">
+        <div className="relative max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-center">
           <div>
             <div className="text-[11px] tracking-[0.22em] uppercase text-ink-mute">
               <Link href="/" className="hover:text-brand-glow">{tNav("home")}</Link> &nbsp;/&nbsp; {t("breadcrumb")}
@@ -44,7 +44,7 @@ export default function ContactPageClient() {
       </section>
 
       <section className="py-24" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
-        <div className="max-w-[1500px] mx-auto grid lg:grid-cols-2 gap-14">
+        <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
           <div>
             <h3 className="text-display-hero text-3xl uppercase mb-8">{t("getInTouchPlain")} <span className="text-serif-italic text-brand-glow">{t("getInTouchItalic")}</span></h3>
             {rows.map(([label, val], i) => (

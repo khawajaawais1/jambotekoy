@@ -24,7 +24,7 @@ export default async function AboutPage() {
       <section className="pt-[180px] pb-20 relative overflow-hidden bg-[linear-gradient(135deg,#2a0a0d_0%,#0a0a0a_45%,#050505_100%)] border-b border-white/10" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
         <div className="absolute -top-40 right-1/4 w-[700px] h-[500px] rounded-full bg-brand/25 blur-[140px]" />
         <div className="absolute bottom-[-8rem] -left-32 w-[480px] h-[480px] rounded-full bg-brand-glow/15 blur-[130px]" />
-        <div className="relative max-w-[1500px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-14 items-center">
+        <div className="relative max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-center">
           <div>
             <div className="text-[11px] tracking-[0.22em] uppercase text-ink-mute">
               <Link href="/" className="hover:text-brand-glow">{tNav("home")}</Link> &nbsp;/&nbsp; {t("breadcrumb")}
@@ -37,7 +37,7 @@ export default async function AboutPage() {
             </p>
           </div>
           <div className="relative aspect-[16/10] rounded-[24px] overflow-hidden bg-surface red-glow">
-            <Image src="/images/hero-side.jpg" alt={t("heroImageAlt")} fill sizes="(max-width: 1024px) 100vw, 600px" className="object-cover" priority />
+            <Image src="/images/exterior-porsche.jpg" alt={t("heroImageAlt")} fill sizes="(max-width: 1024px) 100vw, 600px" className="object-cover object-[center_60%]" priority />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-brand-glow/70" />
             <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-brand-glow/70" />
@@ -46,7 +46,7 @@ export default async function AboutPage() {
       </section>
 
       <section className="py-24" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
-        <div className="max-w-[1500px] mx-auto grid lg:grid-cols-2 gap-16 items-start">
+        <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden bg-surface lg:sticky lg:top-24">
             <Image src="/images/owner.jpg" alt="Joseph Kiuna Kamau — founder" fill sizes="(max-width: 1024px) 100vw, 600px" className="object-cover" />
           </div>

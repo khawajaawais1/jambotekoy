@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sql, ensureSchema, type Booking } from "@/lib/db";
-import { isValidBookableDate, isValidSlotTime } from "@/lib/slots";
+import { isPastSlot, isValidBookableDate, isValidSlotTime } from "@/lib/slots";
 import { sendBookingEmails } from "@/lib/email";
 import { sendOwnerWhatsApp } from "@/lib/whatsapp";
 
@@ -45,6 +45,9 @@ export async function POST(req: NextRequest) {
   }
   if (!isValidSlotTime(time)) {
     return NextResponse.json({ error: "Invalid time slot." }, { status: 400 });
+  }
+  if (isPastSlot(date, time)) {
+    return NextResponse.json({ error: "This time slot has already passed." }, { status: 400 });
   }
   for (const [field, value] of [["name", name], ["phone", phone], ["email", email], ["reason", reason]] as const) {
     if (typeof value !== "string" || value.trim().length === 0) {

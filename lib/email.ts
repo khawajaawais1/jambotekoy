@@ -1,5 +1,28 @@
-import sgMail from "@sendgrid/mail";
+import nodemailer from "nodemailer";
 import type { Booking } from "./db";
+
+let transporter: ReturnType<typeof nodemailer.createTransport> | null = null;
+
+function getTransporter() {
+  if (transporter) return transporter;
+
+  const host = process.env.SMTP_HOST;
+  const port = Number(process.env.SMTP_PORT ?? 587);
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASSWORD;
+
+  if (!host || !user || !pass) {
+    throw new Error("SMTP_HOST / SMTP_USER / SMTP_PASSWORD not configured — skipping email send.");
+  }
+
+  transporter = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465, // 465 = implicit TLS; 587/25 upgrade via STARTTLS automatically
+    auth: { user, pass }
+  });
+  return transporter;
+}
 
 function formatDate(dateStr: string, locale: string) {
   const d = new Date(`${dateStr}T00:00:00`);
@@ -38,21 +61,20 @@ function ownerEmailContent(b: Booking) {
 
 /** Sends both notification emails. Each is best-effort — failures are thrown to the caller to log, not retried. */
 export async function sendBookingEmails(booking: Booking) {
-  const apiKey = process.env.SENDGRID_API_KEY;
-  const from = process.env.SENDGRID_FROM_EMAIL;
+  const from = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
   const ownerEmail = process.env.OWNER_NOTIFICATION_EMAIL;
-
-  if (!apiKey || !from) {
-    throw new Error("SENDGRID_API_KEY / SENDGRID_FROM_EMAIL not configured — skipping email send.");
+  if (!from) {
+    throw new Error("SMTP_FROM_EMAIL (or SMTP_USER) not configured — skipping email send.");
   }
-  sgMail.setApiKey(apiKey);
+
+  const mailer = getTransporter();
 
   const customer = customerEmailContent(booking);
-  const tasks = [sgMail.send({ to: booking.email, from, subject: customer.subject, text: customer.text, html: customer.html })];
+  const tasks = [mailer.sendMail({ to: booking.email, from, subject: customer.subject, text: customer.text, html: customer.html })];
 
   if (ownerEmail) {
     const owner = ownerEmailContent(booking);
-    tasks.push(sgMail.send({ to: ownerEmail, from, subject: owner.subject, text: owner.text, html: owner.html }));
+    tasks.push(mailer.sendMail({ to: ownerEmail, from, subject: owner.subject, text: owner.text, html: owner.html }));
   }
 
   await Promise.all(tasks);

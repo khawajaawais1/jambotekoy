@@ -19,6 +19,22 @@ function helsinkiTodayParts(): { y: number; m: number; d: number } {
   return { y, m, d };
 }
 
+function helsinkiNowParts(): { y: number; m: number; d: number; hh: number; mm: number } {
+  const fmt = new Intl.DateTimeFormat("en-CA", {
+    timeZone: TIMEZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  });
+  const parts = fmt.formatToParts(new Date());
+  const get = (type: string) => Number(parts.find((p) => p.type === type)!.value);
+  // Some environments render midnight as "24" with hour12:false — normalize it.
+  return { y: get("year"), m: get("month"), d: get("day"), hh: get("hour") % 24, mm: get("minute") };
+}
+
 function toISODate(y: number, m: number, d: number): string {
   return `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
 }
@@ -44,4 +60,14 @@ export function isValidBookableDate(dateStr: string): boolean {
 
 export function isValidSlotTime(time: string): boolean {
   return SLOT_TIMES.includes(time);
+}
+
+/** True if the given 'YYYY-MM-DD' + 'HH:mm' slot start time has already passed, in Europe/Helsinki time. */
+export function isPastSlot(dateStr: string, time: string): boolean {
+  const now = helsinkiNowParts();
+  const todayStr = toISODate(now.y, now.m, now.d);
+  if (dateStr < todayStr) return true;
+  if (dateStr > todayStr) return false;
+  const [hh, mm] = time.split(":").map(Number);
+  return hh < now.hh || (hh === now.hh && mm <= now.mm);
 }

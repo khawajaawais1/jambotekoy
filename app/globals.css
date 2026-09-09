@@ -59,6 +59,26 @@ body { overflow-x: hidden; }
     box-shadow: 0 20px 60px -20px rgba(225,29,46,0.65), 0 0 0 1px rgba(225,29,46,0.35) inset;
   }
   .marquee-track { animation: marquee 42s linear infinite; }
+  /* Pause-on-hover only for devices that actually have a mouse — on touch
+     devices there's no un-hover event, so a tap can leave the animation
+     permanently paused ("stuck" carousel) if this applied unconditionally. */
+  @media (hover: hover) {
+    .marquee-hover-pause:hover { animation-play-state: paused; }
+  }
+  /* On touch-only devices, ditch the passive auto-scroll for a real
+     swipeable, snap-to-card carousel — a slow CSS animation reads as
+     "broken" when a user expects to swipe a card-shaped row. */
+  @media (hover: none) {
+    .touch-carousel {
+      animation: none !important;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .touch-carousel::-webkit-scrollbar { display: none; }
+    .touch-carousel > * { scroll-snap-align: start; }
+  }
 }
 
 @keyframes marquee {

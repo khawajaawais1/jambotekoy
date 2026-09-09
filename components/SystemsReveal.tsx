@@ -14,8 +14,12 @@ import { Link } from "@/i18n/routing";
 type Stage = { tag: string; title: string; accent: string; body: string };
 
 // Structural (asset paths) — not translated, index-aligned with the
-// "stages" array in the message catalog.
-const IMAGES = ["/images/bay-align.jpg", "/images/svc-tyres.jpg", "/images/bay-front.jpg", "/images/svc-inspection.jpg"];
+// "stages" array in the message catalog. Each image doubles as the poster
+// for a stage that has a video override below (and as the only visual for
+// the reduced-motion StaticVersion, which never plays video).
+const IMAGES = ["/images/svc-diagnostics-dash.jpg", "/images/svc-tyres.jpg", "/images/full-service-loop-poster.png", "/images/svc-inspection.jpg"];
+// The "Full service" stage (index 2) plays a real loop instead of a still.
+const VIDEOS: Record<number, string> = { 2: "/videos/full-service-loop.mp4" };
 const TOTAL = IMAGES.length + 1;
 // Only the active stage plus one neighbour on either side stay mounted —
 // keeps the number of simultaneously-decoded full-bleed images/video at
@@ -57,7 +61,7 @@ function StaticVersion() {
             {t("headlinePlain")} <span className="text-serif-italic text-brand-glow">{t("headlineItalic")}</span>
           </h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stages.map((s) => (
             <div key={s.title} className="relative aspect-[4/5] rounded-[20px] overflow-hidden border border-white/10 bg-surface">
               <Image src={s.img} alt={`${s.title} ${s.accent}`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
@@ -128,6 +132,7 @@ function ScrollVersion() {
           <StageCapsule
             key={s.title}
             data={s}
+            video={VIDEOS[i]}
             index={i}
             isActive={active === i}
             mounted={Math.abs(active - i) <= MOUNT_RADIUS}
@@ -201,12 +206,14 @@ function CapsuleChrome({ tag, isActive }: { tag: string; isActive: boolean }) {
 
 function StageCapsule({
   data,
+  video,
   index,
   isActive,
   mounted,
   scrollYProgress
 }: {
   data: Stage & { img: string };
+  video?: string;
   index: number;
   isActive: boolean;
   mounted: boolean;
@@ -217,11 +224,16 @@ function StageCapsule({
   const end = (index + 1) * seg;
   const pad = seg * 0.22;
   const dir = index % 2 === 0 ? -1 : 1;
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const opacity = useTransform(scrollYProgress, [start, start + pad, end - pad, end], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [start, start + pad, end - pad, end], [1.1, 1, 1, 0.92]);
   const x = useTransform(scrollYProgress, [start, start + pad, end - pad, end], [dir * -60, 0, 0, dir * 60]);
   const rotate = useTransform(scrollYProgress, [start, start + pad, end - pad, end], [dir * -4, 0, 0, dir * 4]);
+
+  useEffect(() => {
+    if (mounted && video) videoRef.current?.play().catch(() => {});
+  }, [mounted, video]);
 
   if (!mounted) return null;
 
@@ -235,14 +247,27 @@ function StageCapsule({
         style={{ scale, x, rotate }}
         className="relative w-[86%] sm:w-full max-w-[560px] sm:max-w-[640px] aspect-[4/5] sm:aspect-[16/10] rounded-[28px] overflow-hidden bg-surface red-glow"
       >
-        <Image
-          src={data.img}
-          alt={`${data.title} ${data.accent}`}
-          fill
-          sizes="(max-width: 1024px) 92vw, 640px"
-          className="object-cover"
-          priority={index === 0}
-        />
+        {video ? (
+          <video
+            ref={videoRef}
+            src={video}
+            poster={data.img}
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ) : (
+          <Image
+            src={data.img}
+            alt={`${data.title} ${data.accent}`}
+            fill
+            sizes="(max-width: 1024px) 92vw, 640px"
+            className="object-cover"
+            priority={index === 0}
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
         {isActive && (
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -309,7 +334,7 @@ function Finale({
           loop
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-bottom"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
       </motion.div>

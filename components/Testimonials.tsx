@@ -43,7 +43,7 @@ export default function Testimonials() {
       </div>
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-        <div className="flex marquee-track hover:[animation-play-state:paused] will-change-transform">
+        <div className="flex marquee-track marquee-hover-pause touch-carousel will-change-transform">
           {row.map((r, i) => <Card key={i} {...r} />)}
         </div>
       </motion.div>

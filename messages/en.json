@@ -49,7 +49,9 @@
     "hours2": "Sat · By appointment",
     "hours3": "Sun · Closed",
     "copyright": "© {year} Jambotek Oy · Jyväskylä, Finland",
-    "tagline": "Aina valmiina auttamaan"
+    "tagline": "Aina valmiina auttamaan",
+    "facebookAriaLabel": "Jambotek Oy on Facebook",
+    "instagramAriaLabel": "Jambotek Oy on Instagram"
   },
   "hero": {
     "liveStatus": "Live · Jyväskylä · Finland",
@@ -104,28 +106,23 @@
       { "tag": "Bay 04", "title": "Ready", "accent": "to roll" }
     ]
   },
+  "liveAtTheShop": {
+    "eyebrow": "The shop in motion",
+    "headlinePlain": "Precision,",
+    "headlineItalic": "in real time.",
+    "liveLabel": "Live",
+    "card1Title": "Wheel",
+    "card1Accent": "alignment",
+    "card1Body": "HPA computer alignment, adjusted live on camera until every axis sits at factory spec.",
+    "card2Title": "Tyre",
+    "card2Accent": "balancing",
+    "card2Body": "Every wheel spun, weighed and balanced by hand before it goes back on the car."
+  },
   "statsGrid": {
     "carsServiced": "Cars serviced",
     "yearsExperience": "Years experience",
     "repeatCustomers": "Repeat customers",
     "googleRating": "Google rating"
-  },
-  "storyBlock": {
-    "eyebrow": "The story",
-    "headlinePlain": "One workshop.",
-    "headlineItalic": "One promise.",
-    "paragraph": "Jambotek Oy is an independent auto workshop founded by <b>Joseph Kiuna Kamau</b>, a EureCar-certified master technician working out of Jyväskylä. Every service passes through the same hands — from the check-in call to the final road test.",
-    "yearsBadge": "15+",
-    "yearsBadgeLabel": "Years experience",
-    "certifiedBadgeLabel": "Certified",
-    "certifiedBadgeValue": "EureCar Master",
-    "bullets": [
-      "EureCar & AD Finland certified master technician",
-      "Trained on modern electric & hybrid drivetrains",
-      "Genuine & OEM-grade parts sourced through AD Finland",
-      "Transparent quotes — no work started without approval"
-    ],
-    "readStory": "Read the full story"
   },
   "testimonials": {
     "eyebrow": "In the customers' words",
@@ -179,7 +176,7 @@
     "headlinePlain": "A workshop built",
     "headlineItalic": "on trust.",
     "intro": "Jambotek Oy is a small, independent auto workshop run by people who love cars — and take the time to fix them properly.",
-    "heroImageAlt": "Jambotek Oy — the workshop's cars",
+    "heroImageAlt": "Jambotek Oy — workshop entrance",
     "storyEyebrow": "The story",
     "storyHeadlinePlain": "Founded by a",
     "storyHeadlineItalic": "master technician.",

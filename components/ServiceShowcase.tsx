@@ -7,7 +7,7 @@ import { Link } from "@/i18n/routing";
 
 // Structural data (asset paths, stable ids) — kept out of the message
 // catalog since these don't change per locale, only the copy does.
-const IMAGES = ["/images/svc-diagnostics.jpg", "/images/bay-align-wide.jpg", "/images/svc-service.jpg", "/images/svc-inspection-2.jpg"];
+const IMAGES = ["/images/svc-diagnostics.jpg", "/images/svc-tyres.jpg", "/images/svc-service.jpg", "/images/svc-inspection-2.jpg"];
 
 type Service = { num: string; title: string; accent: string; body: string; price: string };
 
@@ -26,7 +26,7 @@ export default function ServiceShowcase() {
           <div className="text-[11px] tracking-[0.3em] uppercase text-brand-glow mb-5 flex items-center gap-3">
             <span className="text-brand">///</span> {t("eyebrow")}
           </div>
-          <h2 className="text-display-hero text-[clamp(42px,6.5vw,92px)] leading-none">
+          <h2 className="text-display-hero text-[clamp(42px,6.5vw,92px)] !leading-[1.1]">
             {t("headlinePlain")} <span className="text-serif-italic text-brand-glow">{t("headlineItalic")}</span> {t("headlineEnd")}
           </h2>
           <p className="mt-7 text-lg text-ink-dim max-w-xl">
@@ -34,7 +34,7 @@ export default function ServiceShowcase() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 items-start">
           {/* Interactive list */}
           <div>
             {SERVICES.map((s) => {
@@ -64,10 +64,6 @@ export default function ServiceShowcase() {
                         </motion.p>
                       )}
                     </AnimatePresence>
-                  </div>
-                  <div className="text-right hidden sm:block">
-                    <div className="text-display-hero text-xl">{s.price}</div>
-                    <div className="text-[10px] tracking-[0.2em] uppercase text-ink-mute">{t("starting")}</div>
                   </div>
                   <svg viewBox="0 0 24 24" className={`w-5 h-5 transition-all ${isActive ? "text-brand-glow translate-x-1" : "text-ink-mute"}`} fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
                 </button>

@@ -8,6 +8,7 @@ import clsx from "clsx";
 
 export default function Nav() {
   const t = useTranslations("nav");
+  const tFooter = useTranslations("footer");
   const locale = useLocale();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -37,7 +38,7 @@ export default function Nav() {
     >
       <div className="flex items-center justify-between max-w-[1500px] mx-auto">
         <Link href="/" className="flex items-center gap-3 group" aria-label={t("homeAriaLabel")}>
-          <Logo className="w-10 group-hover:scale-105 transition-transform" />
+          <Logo className="w-10 group-hover:scale-105 transition-transform" priority />
           <div className="text-display-hero text-[18px] leading-none tracking-[0.14em]">
             JAMBOTEK <span className="text-brand-glow">OY</span>
             <div className="text-[9px] tracking-[0.28em] mt-1 font-sans font-medium text-brand-glow/90">
@@ -78,9 +79,10 @@ export default function Nav() {
         </nav>
 
         <button
-          className="md:hidden w-10 h-10 border border-white/20 rounded-lg grid place-items-center"
+          className="relative z-[60] md:hidden w-10 h-10 border border-white/20 rounded-lg grid place-items-center"
           onClick={() => setOpen((s) => !s)}
           aria-label={t("menuAriaLabel")}
+          aria-expanded={open}
         >
           <div className="w-4 h-3 relative">
             <span className={clsx("absolute inset-x-0 top-0 h-px bg-white transition-transform", open && "translate-y-1.5 rotate-45")} />
@@ -92,12 +94,27 @@ export default function Nav() {
 
       <AnimatePresence>
         {open && (
+          <motion.div
+            key="backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-40 bg-black/60 md:hidden"
+            onClick={() => setOpen(false)}
+            aria-hidden
+          />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {open && (
           <motion.nav
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed top-0 right-0 bottom-0 w-[86%] max-w-[380px] glass border-l border-white/10 flex flex-col gap-6 px-10 pt-28 md:hidden"
+            className="fixed z-50 top-0 right-0 bottom-0 w-[86%] max-w-[380px] bg-[#0a0a0a] border-l border-white/10 shadow-2xl flex flex-col gap-6 px-10 pt-28 md:hidden"
           >
             {LINKS.map((l) => (
               <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-2xl font-medium hover:text-brand-glow">
@@ -108,6 +125,26 @@ export default function Nav() {
             <Link href="/contact" onClick={() => setOpen(false)} className="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-brand text-white text-[12px] tracking-[0.2em] uppercase font-semibold">
               {t("bookService")}
             </Link>
+            <div className="flex items-center gap-3 mt-2">
+              <a
+                href="https://www.facebook.com/profile.php?id=61594088317755"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={tFooter("facebookAriaLabel")}
+                className="w-10 h-10 grid place-items-center rounded-full border border-white/15 text-ink-dim hover:text-white hover:border-brand hover:bg-brand transition-colors"
+              >
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor"><path d="M13.5 21v-8.2h2.75l.41-3.19h-3.16V7.55c0-.92.26-1.55 1.58-1.55h1.68V3.14C15.98 3.1 15.06 3 14 3c-2.2 0-3.71 1.34-3.71 3.8v2.81H7.5v3.19h2.79V21h3.21z"/></svg>
+              </a>
+              <a
+                href="https://www.instagram.com/jambotekoy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={tFooter("instagramAriaLabel")}
+                className="w-10 h-10 grid place-items-center rounded-full border border-white/15 text-ink-dim hover:text-white hover:border-brand hover:bg-brand transition-colors"
+              >
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.7"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+              </a>
+            </div>
           </motion.nav>
         )}
       </AnimatePresence>

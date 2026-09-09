@@ -35,18 +35,17 @@ app/
 components/
   Nav.tsx             # Glass nav with mobile sheet
   Footer.tsx
-  Logo.tsx            # Inline SVG (red car swoosh — matches shirt / signage)
+  Logo.tsx            # Real brand icon (public/images/logo-icon.png) — matches shirt / signage
   Hero.tsx            # Split cinematic hero, CSS keyframes intro, Framer parallax
   BrandMarquee.tsx    # Infinite CSS marquee
   ServiceShowcase.tsx # Interactive service tabs → animated image swap
   WorkshopGallery.tsx # Bento grid of bay tiles, reveal on scroll
   StatsGrid.tsx       # CountUp stats
-  StoryBlock.tsx      # Owner story + floating credential badges
   Testimonials.tsx    # Paused-on-hover review marquee
   LocationCard.tsx    # Details + embedded Google Map
   BigCTA.tsx          # Fullscreen finale
 public/
-  favicon.svg
+  favicon.png
   images/             # See public/images/README.md — drop your real photos here
 ```
 

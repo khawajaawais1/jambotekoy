@@ -49,7 +49,9 @@
     "hours2": "La · Sopimuksen mukaan",
     "hours3": "Su · Suljettu",
     "copyright": "© {year} Jambotek Oy · Jyväskylä",
-    "tagline": "Aina valmiina auttamaan"
+    "tagline": "Aina valmiina auttamaan",
+    "facebookAriaLabel": "Jambotek Oy Facebookissa",
+    "instagramAriaLabel": "Jambotek Oy Instagramissa"
   },
   "hero": {
     "liveStatus": "Nyt auki · Jyväskylä",
@@ -104,28 +106,23 @@
       { "tag": "Halli 04", "title": "Valmiina", "accent": "ajoon" }
     ]
   },
+  "liveAtTheShop": {
+    "eyebrow": "Korjaamo liikkeessä",
+    "headlinePlain": "Tarkkuutta,",
+    "headlineItalic": "reaaliajassa.",
+    "liveLabel": "Suorana",
+    "card1Title": "Pyörän",
+    "card1Accent": "linjaus",
+    "card1Body": "HPA-tietokoneohjattu linjaus, säädetty suorana kameralle kunnes jokainen akseli on tehdasarvoissa.",
+    "card2Title": "Renkaiden",
+    "card2Accent": "tasapainotus",
+    "card2Body": "Jokainen pyörä pyöritetään, punnitaan ja tasapainotetaan käsin ennen kuin se palaa autoon."
+  },
   "statsGrid": {
     "carsServiced": "Huollettua autoa",
     "yearsExperience": "Vuoden kokemus",
     "repeatCustomers": "Palaavaa asiakasta",
     "googleRating": "Google-arvosana"
-  },
-  "storyBlock": {
-    "eyebrow": "Tarina",
-    "headlinePlain": "Yksi korjaamo.",
-    "headlineItalic": "Yksi lupaus.",
-    "paragraph": "Jambotek Oy on riippumaton autokorjaamo, jonka perusti <b>Joseph Kiuna Kamau</b>, EureCar-sertifioitu mestariasentaja Jyväskylästä. Jokainen huolto kulkee samojen käsien kautta — vastaanottopuhelusta viimeiseen koeajoon.",
-    "yearsBadge": "15+",
-    "yearsBadgeLabel": "Vuoden kokemus",
-    "certifiedBadgeLabel": "Sertifioitu",
-    "certifiedBadgeValue": "EureCar-mestari",
-    "bullets": [
-      "EureCar & AD Finland -sertifioitu mestariasentaja",
-      "Koulutettu moderneihin sähkö- ja hybridivoimalinjoihin",
-      "Alkuperäiset & OEM-tason varaosat AD Finlandin kautta",
-      "Läpinäkyvät tarjoukset — ei töitä ilman hyväksyntää"
-    ],
-    "readStory": "Lue koko tarina"
   },
   "testimonials": {
     "eyebrow": "Asiakkaidemme sanoin",
@@ -179,7 +176,7 @@
     "headlinePlain": "Korjaamo, joka on rakennettu",
     "headlineItalic": "luottamukselle.",
     "intro": "Jambotek Oy on pieni, riippumaton autokorjaamo, jota pyörittävät autoja rakastavat ihmiset — ja jotka käyttävät aikaa korjatakseen ne kunnolla.",
-    "heroImageAlt": "Jambotek Oy — korjaamon autoja",
+    "heroImageAlt": "Jambotek Oy — korjaamon sisäänkäynti",
     "storyEyebrow": "Tarina",
     "storyHeadlinePlain": "Perustanut",
     "storyHeadlineItalic": "mestariasentaja.",

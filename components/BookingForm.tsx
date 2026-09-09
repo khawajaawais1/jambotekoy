@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { getBookableDates, SLOT_TIMES } from "@/lib/slots";
+import { getBookableDates, isPastSlot, SLOT_TIMES } from "@/lib/slots";
 
 type Availability = Record<string, string[]>; // date -> taken times
 
@@ -45,7 +45,8 @@ export default function BookingForm() {
 
   const dayFmt = new Intl.DateTimeFormat(locale === "fi" ? "fi-FI" : "en-GB", { weekday: "short", day: "numeric", month: "short" });
   const takenForSelected = new Set(availability[selectedDate] ?? []);
-  const allTakenForSelected = SLOT_TIMES.every((time) => takenForSelected.has(time));
+  const isSlotUnavailable = (time: string) => takenForSelected.has(time) || isPastSlot(selectedDate, time);
+  const allTakenForSelected = SLOT_TIMES.every(isSlotUnavailable);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -99,7 +100,7 @@ export default function BookingForm() {
       new Date(`${confirmed.date}T00:00:00`)
     );
     return (
-      <div className="p-8 md:p-10 rounded-[24px] border border-brand/40 bg-gradient-to-b from-brand/10 to-transparent text-center">
+      <div className="min-w-0 p-8 md:p-10 rounded-[24px] border border-brand/40 bg-gradient-to-b from-brand/10 to-transparent text-center">
         <div className="w-14 h-14 mx-auto rounded-full bg-brand grid place-items-center red-glow">
           <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
         </div>
@@ -116,7 +117,7 @@ export default function BookingForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="p-8 md:p-10 rounded-[24px] border border-white/10 bg-gradient-to-b from-white/[0.02] to-transparent space-y-6">
+    <form onSubmit={onSubmit} className="min-w-0 p-8 md:p-10 rounded-[24px] border border-white/10 bg-gradient-to-b from-white/[0.02] to-transparent space-y-6">
       {/* Date tiles */}
       <div>
         <label className="block text-[10px] tracking-[0.28em] uppercase text-ink-mute mb-3">{t("selectDate")}</label>
@@ -153,7 +154,7 @@ export default function BookingForm() {
         ) : (
           <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
             {SLOT_TIMES.map((time) => {
-              const taken = takenForSelected.has(time);
+              const taken = isSlotUnavailable(time);
               const isSelected = time === selectedTime;
               return (
                 <button

@@ -18,6 +18,26 @@ export default async function Footer() {
             </div>
           </Link>
           <p className="text-ink-dim text-sm mt-5 max-w-xs">{t("description")}</p>
+          <div className="flex items-center gap-3 mt-6">
+            <a
+              href="https://www.facebook.com/profile.php?id=61594088317755"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("facebookAriaLabel")}
+              className="w-9 h-9 grid place-items-center rounded-full border border-white/15 text-ink-dim hover:text-white hover:border-brand hover:bg-brand transition-colors"
+            >
+              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor"><path d="M13.5 21v-8.2h2.75l.41-3.19h-3.16V7.55c0-.92.26-1.55 1.58-1.55h1.68V3.14C15.98 3.1 15.06 3 14 3c-2.2 0-3.71 1.34-3.71 3.8v2.81H7.5v3.19h2.79V21h3.21z"/></svg>
+            </a>
+            <a
+              href="https://www.instagram.com/jambotekoy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("instagramAriaLabel")}
+              className="w-9 h-9 grid place-items-center rounded-full border border-white/15 text-ink-dim hover:text-white hover:border-brand hover:bg-brand transition-colors"
+            >
+              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.7"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
         </div>
 
         <FooterCol title={t("exploreTitle")} items={[
