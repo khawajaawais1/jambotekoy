@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 
 const anton = Anton({ subsets: ["latin"], weight: "400", variable: "--font-anton" });
-const cormorant = Cormorant({ subsets: ["latin"], weight: ["500", "600", "700"], style: ["italic", "normal"], variable: "--font-cormorant" });
+const cormorant = Cormorant({ subsets: ["latin"], weight: ["500", "600"], style: ["italic"], variable: "--font-cormorant" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export function generateStaticParams() {

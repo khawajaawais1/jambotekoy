@@ -1,30 +1,37 @@
-# Images
+# Images & videos
 
-Drop your Jambotek Oy photos here using these exact filenames. The site references them everywhere — swap the files and everything just works, no code changes needed.
+The site references these exact filenames — replace a file (keep the name) and everything updates, no code changes needed.
 
-| Filename | Source photo | Used on |
+| Filename | What it shows | Used on |
 |---|---|---|
-| `hero-bmw.jpg` | White BMW headlights on the lift, front-facing | Homepage hero (right card) |
-| `owner.jpg` | Joseph at the desk wearing the Jambotek cap & tee | Homepage story block + About page portrait |
-| `bay-01.jpg` | Wide interior of the workshop with the BMW on the lift | Gallery — large tile |
+| `hero-car.jpg` | White Mercedes-Benz, front-on in the bay, headlights on | Homepage hero (right card) |
+| `exterior-wide.jpg` | Blue Porsche outside the Jambotek Oy building (wide) | About page hero |
+| `owner.jpg` | Joseph at the desk wearing the Jambotek cap & tee | About page portrait |
+| `bay-01.jpg` | Wide interior of the workshop with a car on the lift | Gallery — large tile |
 | `bay-tyres.jpg` | Joseph mounting a wheel on the tyre machine | Gallery |
-| `bay-align.jpg` | Joseph at the HPA alignment monitor (back of shirt visible) | Gallery |
-| `bay-exterior.jpg` | Building entrance with the JAMBOTEK OY signage above door 4 | Gallery |
-| `svc-diagnostics.jpg` | Close-up of a car receiving a diagnostic / ECU work | Services showcase — Diagnostics tab |
-| `svc-tyres.jpg` | Wheel/tyre being mounted | Services showcase — Tyres tab |
-| `svc-service.jpg` | Under-hood or lift shot for general servicing | Services showcase — Service tab |
-| `svc-inspection.jpg` | Joseph attaching alignment clamp / doing an inspection | Systems reveal — Pre-purchase capsule |
-| `svc-inspection-2.jpg` | Alternate inspection photo | Services showcase — Inspection tab |
-| `bay-front.jpg` | BMW 1-series front-on in the bay, doors open | Systems reveal — Full service capsule |
-| `bay-align-wide.jpg` | Wide shot down the HPA alignment rails toward a car on the lift | Systems reveal — Tyres capsule |
-| `hero-side.jpg` | BMW side profile | Gallery — Bay 04 tile |
-| `reveal-bmw-poster.png` | Still frame from `reveal-bmw.mp4`, used as its poster and as the reduced-motion fallback image | Systems reveal — finale |
+| `bay-align.jpg` | Joseph at the HPA alignment monitor | Gallery |
+| `bay-exterior.jpg` | Building entrance with the JAMBOTEK OY signage | Gallery, Contact hero |
+| `hero-side.jpg` | Car side profile | Gallery — Bay 04 tile |
+| `svc-diagnostics.jpg` / `svc-diagnostics-dash.jpg` | Diagnostics / ECU work | Services showcase, Systems reveal |
+| `svc-tyres.jpg` | Wheel/tyre being mounted | Services showcase, Systems reveal |
+| `svc-service.jpg` | General servicing | Services showcase |
+| `svc-inspection.jpg` / `svc-inspection-2.jpg` | Inspection photos | Systems reveal, Services showcase |
+| `*-poster.webp` | First frame of each video (shown while it loads) | Video posters |
 
-`public/videos/reveal-bmw.mp4` — white BMW 5-series on the HPA alignment rig, headlights on. Used as the looping finale reveal in the "Systems reveal" homepage section (skipped entirely for `prefers-reduced-motion`).
+## Videos (`public/videos/`)
 
-Recommended:
-- 16:9 or 4:5 aspect works best; 2000px on the long edge is plenty.
-- JPG or WebP, quality 80.
-- No hard letterboxes — the component crops with `object-cover`.
+| File | Used on |
+|---|---|
+| `reveal-bmw.mp4` | Systems reveal — finale |
+| `full-service-loop.mp4` | Systems reveal — "Full service" stage |
+| `alignment-rig.mp4` | "Live at the shop" — wheel alignment card |
+| `tyre-balance.mp4` | "Live at the shop" — tyre balancing card |
 
-Until you drop the real files in, the site loads high-quality automotive placeholder imagery from a shared bundle.
+## Keep the site fast
+
+Full-size camera photos and raw AI exports are what make pages slow. Before adding media:
+
+- **Photos**: resize to ~2000px on the long edge, JPG quality ~78 (≈200–350 KB). Phone originals are 5–20 MB.
+- **Videos**: 720p H.264, no audio, ≤ ~1.5 MB, `+faststart`. A 7-second clip should not exceed ~1 MB.
+- **Posters**: WebP, ~50–80 KB.
+- Keep raw/original files **outside** `public/` (this project uses the git-ignored `source-assets/` folder) — anything in `public/` is deployed to Vercel.

@@ -50,6 +50,7 @@
     "hours3": "Sun · Closed",
     "copyright": "© {year} Jambotek Oy · Jyväskylä, Finland",
     "tagline": "Aina valmiina auttamaan",
+    "businessId": "Business ID: 3373658-3",
     "facebookAriaLabel": "Jambotek Oy on Facebook",
     "instagramAriaLabel": "Jambotek Oy on Instagram"
   },
@@ -65,10 +66,10 @@
     "openToday": "Open Today",
     "certified": "EureCar Certified",
     "rating": "★ 4.9 avg rating",
-    "cardAlt": "BMW at Jambotek Oy — Bay 04",
+    "cardAlt": "Mercedes-Benz at Jambotek Oy — Bay 04",
     "diagnosticInProgress": "Diagnostic in progress",
     "bay": "Bay 04",
-    "bayMeta": "BMW · Full Service",
+    "bayMeta": "Mercedes-Benz · Full Service",
     "live": "Live",
     "recording": "Recording",
     "scroll": "Scroll"
@@ -148,7 +149,8 @@
     "hoursValue": "Mon – Fri · 08:00 – 17:00\nSat by appointment · Sun closed",
     "getDirections": "Get directions",
     "callShop": "Call the shop",
-    "liveMap": "Live map"
+    "liveMap": "Live map",
+    "loadMap": "Tap to load map"
   },
   "bigCTA": {
     "headlinePlain": "Your car deserves",
@@ -238,7 +240,8 @@
     "submitSending": "Sending…",
     "submitSent": "✓ Request received",
     "note": "We usually reply the same working day.",
-    "mapTitle": "Jambotek Oy on Google Maps"
+    "mapTitle": "Jambotek Oy on Google Maps",
+    "loadMap": "Tap to load map"
   },
   "languageSwitcher": {
     "fi": "FI",

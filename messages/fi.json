@@ -50,6 +50,7 @@
     "hours3": "Su · Suljettu",
     "copyright": "© {year} Jambotek Oy · Jyväskylä",
     "tagline": "Aina valmiina auttamaan",
+    "businessId": "Y-tunnus: 3373658-3",
     "facebookAriaLabel": "Jambotek Oy Facebookissa",
     "instagramAriaLabel": "Jambotek Oy Instagramissa"
   },
@@ -65,10 +66,10 @@
     "openToday": "Avoinna tänään",
     "certified": "EureCar-sertifioitu",
     "rating": "★ 4,9 keskiarvo",
-    "cardAlt": "BMW Jambotek Oy:llä — Halli 04",
+    "cardAlt": "Mercedes-Benz Jambotek Oy:llä — Halli 04",
     "diagnosticInProgress": "Vianmääritys käynnissä",
     "bay": "Halli 04",
-    "bayMeta": "BMW · Täyshuolto",
+    "bayMeta": "Mercedes-Benz · Täyshuolto",
     "live": "Suorana",
     "recording": "Tallentaa",
     "scroll": "Vieritä"
@@ -148,7 +149,8 @@
     "hoursValue": "Ma–Pe · 08:00–17:00\nLa sopimuksen mukaan · Su suljettu",
     "getDirections": "Näytä reitti",
     "callShop": "Soita korjaamoon",
-    "liveMap": "Kartta suorana"
+    "liveMap": "Kartta suorana",
+    "loadMap": "Näytä kartta napauttamalla"
   },
   "bigCTA": {
     "headlinePlain": "Autosi ansaitsee",
@@ -238,7 +240,8 @@
     "submitSending": "Lähetetään…",
     "submitSent": "✓ Pyyntö vastaanotettu",
     "note": "Vastaamme yleensä samana arkipäivänä.",
-    "mapTitle": "Jambotek Oy Google Mapsissa"
+    "mapTitle": "Jambotek Oy Google Mapsissa",
+    "loadMap": "Näytä kartta napauttamalla"
   },
   "languageSwitcher": {
     "fi": "FI",

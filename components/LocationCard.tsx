@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import MapEmbed from "./MapEmbed";
 
 export default function LocationCard() {
   const t = useTranslations("locationCard");
@@ -36,14 +37,13 @@ export default function LocationCard() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.9, delay: 0.1 }} className="relative rounded-[24px] overflow-hidden border border-white/10 min-h-[420px] group">
-          <iframe
+          <MapEmbed
             title="Jambotek Oy on Google Maps"
-            src="https://www.google.com/maps?q=Jokivarrentie%2012%2C%2040520%20Jyv%C3%A4skyl%C3%A4%2C%20Finland&output=embed"
-            className="absolute inset-0 w-full h-full grayscale-[85%] invert-[92%] contrast-[0.85] group-hover:grayscale-0 group-hover:invert-0 transition duration-700"
-            loading="lazy"
+            loadLabel={t("loadMap")}
+            iframeClassName="grayscale-[85%] invert-[92%] contrast-[0.85] group-hover:grayscale-0 group-hover:invert-0 transition duration-700"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40" />
-          <div className="pointer-events-none absolute top-6 left-6 glass border border-white/15 rounded-full px-5 py-2 text-[10px] tracking-[0.28em] uppercase">
+          <div className="pointer-events-none absolute top-6 left-6 bg-black/70 border border-white/15 rounded-full px-5 py-2 text-[10px] tracking-[0.28em] uppercase">
             <span className="text-brand-glow">●</span> {t("liveMap")}
           </div>
         </motion.div>

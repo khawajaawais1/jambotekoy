@@ -12,8 +12,9 @@ export default function Hero() {
 
   // Scroll-driven parallax on the car
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "35%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
+  // Scale grows faster than the shift so the photo always covers the card (no gap at the top).
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.18]);
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
 
   // Mouse-driven 3D tilt on the card
@@ -36,13 +37,13 @@ export default function Hero() {
     <section ref={ref} className="relative min-h-[100svh] overflow-hidden noise" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
       {/* ================== Ambient background layers ================== */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[880px] h-[880px] rounded-full bg-brand/25 blur-[140px] animate-pulse-slow" />
-        <div className="absolute bottom-[-8rem] -left-40 w-[620px] h-[620px] rounded-full bg-gold/10 blur-[140px]" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[520px] h-[520px] rounded-full bg-brand-glow/15 blur-[120px] animate-pulse-slow" style={{ animationDelay: "1.4s" }} />
+        <div className="absolute -top-64 -right-64 w-[1160px] h-[1160px] rounded-full bg-[radial-gradient(closest-side,rgba(225,29,46,0.26),transparent)] animate-pulse-slow" />
+        <div className="absolute bottom-[-14rem] -left-64 w-[820px] h-[820px] rounded-full bg-[radial-gradient(closest-side,rgba(234,179,8,0.10),transparent)]" />
+        <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[760px] h-[760px] rounded-full bg-[radial-gradient(closest-side,rgba(255,53,71,0.15),transparent)] animate-pulse-slow" style={{ animationDelay: "1.4s" }} />
       </motion.div>
 
       {/* Drifting grid */}
-      <div className="absolute inset-0 grid-bg mask-radial opacity-70 pointer-events-none grid-drift" />
+      <div className="absolute inset-0 grid-bg mask-radial opacity-70 pointer-events-none" />
 
       {/* Diagonal red sweep — repeats every ~5.5s */}
       <div className="streak" />
@@ -137,7 +138,7 @@ export default function Hero() {
             {/* Car image (parallax on scroll) */}
             <motion.div style={{ y, scale }} className="absolute inset-0">
               <Image
-                src="/images/hero-bmw.jpg"
+                src="/images/hero-car.jpg"
                 alt={t("cardAlt")}
                 fill
                 priority

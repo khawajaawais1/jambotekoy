@@ -23,7 +23,9 @@ function CountUp({ to, suffix, decimalSeparator }: { to: number; suffix: string;
     return () => controls.stop();
   }, [inView, to]);
   const display = to % 1 === 0 ? Math.round(val).toString() : val.toFixed(1).replace(".", decimalSeparator);
-  return <span ref={ref}>{display}{suffix}</span>;
+  // translate="no": Chrome's auto-translate replaces the text node React updates,
+  // which would freeze the counter at 0.
+  return <span ref={ref} translate="no">{display}{suffix}</span>;
 }
 
 export default function StatsGrid() {

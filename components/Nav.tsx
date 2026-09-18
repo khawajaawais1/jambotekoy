@@ -31,8 +31,8 @@ export default function Nav() {
   return (
     <header
       className={clsx(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500 border-b border-transparent",
-        scrolled ? "glass py-3 border-white/10" : "py-5"
+        "fixed inset-x-0 top-0 z-50 transition-[padding,background-color,border-color] duration-500 border-b border-transparent",
+        scrolled ? "bg-[rgba(10,10,10,0.94)] py-3 border-white/10" : "py-5"
       )}
       style={{ paddingLeft: "clamp(20px,4vw,48px)", paddingRight: "clamp(20px,4vw,48px)" }}
     >

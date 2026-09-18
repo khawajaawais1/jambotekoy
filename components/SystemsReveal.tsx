@@ -17,7 +17,7 @@ type Stage = { tag: string; title: string; accent: string; body: string };
 // "stages" array in the message catalog. Each image doubles as the poster
 // for a stage that has a video override below (and as the only visual for
 // the reduced-motion StaticVersion, which never plays video).
-const IMAGES = ["/images/svc-diagnostics-dash.jpg", "/images/svc-tyres.jpg", "/images/full-service-loop-poster.png", "/images/svc-inspection.jpg"];
+const IMAGES = ["/images/svc-diagnostics-dash.jpg", "/images/svc-tyres.jpg", "/images/full-service-loop-poster.webp", "/images/svc-inspection.jpg"];
 // The "Full service" stage (index 2) plays a real loop instead of a still.
 const VIDEOS: Record<number, string> = { 2: "/videos/full-service-loop.mp4" };
 const TOTAL = IMAGES.length + 1;
@@ -76,7 +76,7 @@ function StaticVersion() {
           ))}
         </div>
         <div className="relative mt-6 aspect-[21/9] rounded-[28px] overflow-hidden border border-white/10">
-          <Image src="/images/reveal-bmw-poster.png" alt="Jambotek Oy — the finished car" fill sizes="100vw" className="object-cover" />
+          <Image src="/images/reveal-bmw-poster.webp" alt="Jambotek Oy — the finished car" fill sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
           <div className="absolute inset-x-8 bottom-8 flex flex-wrap items-end justify-between gap-6">
             <h3 className="text-display-hero text-[clamp(28px,4vw,52px)] leading-none">
@@ -101,6 +101,16 @@ function ScrollVersion() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const [active, setActive] = useState(0);
+  // Only keep images/videos mounted while the section is on (or near) screen,
+  // so the reveal video stops decoding once you've scrolled past it.
+  const [near, setNear] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => setNear(entry.isIntersecting), { rootMargin: "500px 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
     const idx = Math.min(TOTAL - 1, Math.max(0, Math.floor(v * TOTAL)));
@@ -114,8 +124,8 @@ function ScrollVersion() {
       <div className="sticky top-0 h-[100svh] overflow-hidden noise bg-bg">
         <div className="absolute inset-0 grid-bg mask-radial opacity-60 pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full bg-brand/15 blur-[110px]" />
-          <div className="absolute bottom-[-6rem] -right-40 w-[460px] h-[460px] rounded-full bg-brand-glow/10 blur-[110px]" />
+          <div className="absolute -top-64 -left-64 w-[840px] h-[840px] rounded-full bg-[radial-gradient(closest-side,rgba(225,29,46,0.16),transparent)]" />
+          <div className="absolute bottom-[-12rem] -right-64 w-[700px] h-[700px] rounded-full bg-[radial-gradient(closest-side,rgba(255,53,71,0.11),transparent)]" />
         </div>
 
         <div
@@ -135,14 +145,14 @@ function ScrollVersion() {
             video={VIDEOS[i]}
             index={i}
             isActive={active === i}
-            mounted={Math.abs(active - i) <= MOUNT_RADIUS}
+            mounted={near && Math.abs(active - i) <= MOUNT_RADIUS}
             scrollYProgress={scrollYProgress}
           />
         ))}
         <Finale
           index={stages.length}
           isActive={active === stages.length}
-          mounted={Math.abs(active - stages.length) <= MOUNT_RADIUS}
+          mounted={near && Math.abs(active - stages.length) <= MOUNT_RADIUS}
           scrollYProgress={scrollYProgress}
           headlinePlain={t("finaleHeadlinePlain")}
           headlineItalic={t("finaleHeadlineItalic")}
@@ -255,7 +265,7 @@ function StageCapsule({
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             className="absolute inset-0 w-full h-full object-cover"
           />
         ) : (
@@ -265,7 +275,6 @@ function StageCapsule({
             fill
             sizes="(max-width: 1024px) 92vw, 640px"
             className="object-cover"
-            priority={index === 0}
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
@@ -329,11 +338,11 @@ function Finale({
         <video
           ref={videoRef}
           src="/videos/reveal-bmw.mp4"
-          poster="/images/reveal-bmw-poster.png"
+          poster="/images/reveal-bmw-poster.webp"
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover object-bottom"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import BookingForm from "@/components/BookingForm";
+import MapEmbed from "@/components/MapEmbed";
 
 export default function ContactPageClient() {
   const t = useTranslations("contactPage");
@@ -58,12 +59,11 @@ export default function ContactPageClient() {
           <BookingForm />
         </div>
 
-        <div className="mt-16 max-w-[1500px] mx-auto aspect-[21/9] rounded-[24px] overflow-hidden border border-white/10">
-          <iframe
+        <div className="relative mt-16 max-w-[1500px] mx-auto aspect-[4/3] sm:aspect-[21/9] rounded-[24px] overflow-hidden border border-white/10">
+          <MapEmbed
             title={t("mapTitle")}
-            src="https://www.google.com/maps?q=Jokivarrentie%2012%2C%2040520%20Jyv%C3%A4skyl%C3%A4%2C%20Finland&output=embed"
-            className="w-full h-full grayscale-[80%] invert-[92%] contrast-[0.85]"
-            loading="lazy"
+            loadLabel={t("loadMap")}
+            iframeClassName="grayscale-[80%] invert-[92%] contrast-[0.85]"
           />
         </div>
       </section>

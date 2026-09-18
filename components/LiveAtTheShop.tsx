@@ -19,14 +19,14 @@ export default function LiveAtTheShop() {
   const clips: Clip[] = [
     {
       video: "/videos/alignment-rig.mp4",
-      poster: "/images/alignment-rig-poster.png",
+      poster: "/images/alignment-rig-poster.webp",
       title: t("card1Title"),
       accent: t("card1Accent"),
       body: t("card1Body")
     },
     {
       video: "/videos/tyre-balance.mp4",
-      poster: "/images/tyre-balance-poster.png",
+      poster: "/images/tyre-balance-poster.webp",
       title: t("card2Title"),
       accent: t("card2Accent"),
       body: t("card2Body")
@@ -68,15 +68,37 @@ function ClipCard({
   liveLabel: string;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  const [everLoaded, setEverLoaded] = useState(false);
+
+  // Only fetch + decode the clip while the card is on (or near) screen.
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el || !playVideo) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+        if (entry.isIntersecting) setEverLoaded(true);
+      },
+      { rootMargin: "250px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [playVideo]);
 
   useEffect(() => {
     // React doesn't reliably trigger the native `autoplay` attribute for a
-    // client-rendered <video>, so kick playback explicitly once mounted.
-    if (playVideo) videoRef.current?.play().catch(() => {});
-  }, [playVideo]);
+    // client-rendered <video>, so drive playback explicitly.
+    const v = videoRef.current;
+    if (!v || !playVideo) return;
+    if (inView) v.play().catch(() => {});
+    else v.pause();
+  }, [inView, everLoaded, playVideo]);
 
   return (
     <motion.div
+      ref={wrapRef}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -86,12 +108,12 @@ function ClipCard({
       {playVideo ? (
         <video
           ref={videoRef}
-          src={clip.video}
+          src={everLoaded ? clip.video : undefined}
           poster={clip.poster}
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover"
         />
       ) : (

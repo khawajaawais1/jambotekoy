@@ -51,7 +51,7 @@ public/
 
 ## Swap in the real photos
 
-The site references local images by exact filenames — replace the placeholder JPGs in `public/images/` and everything updates automatically. See [`public/images/README.md`](./public/images/README.md) for the filename map (`hero-bmw.jpg`, `owner.jpg`, `bay-01.jpg`, etc.).
+The site references local images by exact filenames — replace the placeholder JPGs in `public/images/` and everything updates automatically. See [`public/images/README.md`](./public/images/README.md) for the filename map (`hero-car.jpg`, `owner.jpg`, `bay-01.jpg`, etc.).
 
 ## Business info wired in
 

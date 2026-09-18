@@ -37,7 +37,7 @@ export default async function AboutPage() {
             </p>
           </div>
           <div className="relative aspect-[16/10] rounded-[24px] overflow-hidden bg-surface red-glow">
-            <Image src="/images/exterior-porsche.jpg" alt={t("heroImageAlt")} fill sizes="(max-width: 1024px) 100vw, 600px" className="object-cover object-[center_60%]" priority />
+            <Image src="/images/exterior-wide.jpg" alt={t("heroImageAlt")} fill sizes="(max-width: 1024px) 100vw, 600px" className="object-cover" priority />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-brand-glow/70" />
             <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-brand-glow/70" />
