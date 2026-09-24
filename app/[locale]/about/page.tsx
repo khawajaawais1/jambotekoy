@@ -70,7 +70,7 @@ export default async function AboutPage() {
             <div className="grid sm:grid-cols-3 gap-4 mt-10">
               {certs.map(([title, desc]) => (
                 <div key={title} className="p-6 rounded-[16px] border border-white/10">
-                  <div className="text-display-hero text-xl text-brand-glow">{title}</div>
+                  <div className="text-display-hero text-xl leading-none text-brand-glow">{title}</div>
                   <div className="text-ink-dim text-[13px] mt-2">{desc}</div>
                 </div>
               ))}

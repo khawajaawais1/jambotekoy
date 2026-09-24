@@ -21,7 +21,7 @@
   },
   "metaAbout": {
     "title": "About — Jambotek Oy",
-    "description": "Meet Jambotek Oy — an independent Jyväskylä workshop founded by master technician Joseph Kiuna Kamau."
+    "description": "Meet Jambotek Oy — an independent Jyväskylä workshop founded by professional technician Joseph Kiuna Kamau."
   },
   "metaServices": {
     "title": "Services — Jambotek Oy",
@@ -60,7 +60,7 @@
     "line1": "Built to",
     "line2": "Perform.",
     "line3": "Made to last.",
-    "subtitle": "A certified independent workshop for European cars — diagnostics, tyres, alignment and full-service repair by Master-level technicians. Aina valmiina auttamaan.",
+    "subtitle": "A certified independent workshop for European cars — diagnostics, tyres, alignment and full-service repair by skilled professional technicians. Aina valmiina auttamaan.",
     "ctaBook": "Book a Service",
     "ctaExplore": "Explore Services",
     "openToday": "Open Today",
@@ -181,12 +181,12 @@
     "heroImageAlt": "Jambotek Oy — workshop entrance",
     "storyEyebrow": "The story",
     "storyHeadlinePlain": "Founded by a",
-    "storyHeadlineItalic": "master technician.",
-    "p1": "Jambotek Oy was founded in <b>2023</b> by <b>Joseph Kiuna Kamau</b>, a EureCar-certified master technician with more than a decade of hands-on experience across European brands. After years working inside larger dealerships, Joseph opened Jambotek to offer something rare in the industry: honest, dealer-level workmanship at independent-shop pricing.",
-    "p2": "The workshop lives in a modern bay on <b>Jokivarrentie 12 in Jyväskylä</b> — professional lifts, HPA wheel-alignment, tyre-mounting and balancing equipment, and diagnostic hardware for BMW, Mercedes-Benz, VW Group, Volvo and more.",
+    "storyHeadlineItalic": "professional technician.",
+    "p1": "Jambotek Oy was founded in <b>2023</b> by <b>Joseph Kiuna Kamau</b>, a EureCar-certified professional technician with more than a decade of hands-on experience across European brands. After years working inside larger dealerships, Joseph opened Jambotek to offer something rare in the industry: honest, dealer-level workmanship at independent-shop pricing.",
+    "p2": "The workshop lives in a modern bay on <b>Yritystie 10 in Jyväskylä</b> — professional lifts, HPA wheel-alignment, tyre-mounting and balancing equipment, and diagnostic hardware for BMW, Mercedes-Benz, VW Group, Volvo and more.",
     "p3": "Our promise is simple: we look at the car, we tell you what it needs, we quote before we start, and we hand it back cleaner and safer than we found it. <em>Aina valmiina auttamaan.</em>",
     "cert1Title": "EureCar",
-    "cert1Desc": "Certified Master Technician (EV & hybrid)",
+    "cert1Desc": "Certified Professional Technician (EV & hybrid)",
     "cert2Title": "AD Finland",
     "cert2Desc": "Approved network partner — parts & training",
     "cert3Title": "Bosch",

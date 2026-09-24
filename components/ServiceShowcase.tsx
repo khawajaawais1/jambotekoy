@@ -26,7 +26,7 @@ export default function ServiceShowcase() {
           <div className="text-[11px] tracking-[0.3em] uppercase text-brand-glow mb-5 flex items-center gap-3">
             <span className="text-brand">///</span> {t("eyebrow")}
           </div>
-          <h2 className="text-display-hero text-[clamp(42px,6.5vw,92px)] !leading-[1.1]">
+          <h2 className="text-display-hero text-[clamp(42px,6.5vw,92px)] leading-[1.1]">
             {t("headlinePlain")} <span className="text-serif-italic text-brand-glow">{t("headlineItalic")}</span> {t("headlineEnd")}
           </h2>
           <p className="mt-7 text-lg text-ink-dim max-w-xl">
@@ -46,7 +46,7 @@ export default function ServiceShowcase() {
                   onFocus={() => setActive(s.id)}
                   className="group w-full text-left border-b border-white/10 py-7 flex items-center gap-6 transition-colors hover:bg-white/[0.02]"
                 >
-                  <div className="text-display-hero text-[26px] text-brand w-12">{s.num}</div>
+                  <div className="text-display-hero text-[26px] leading-none text-brand w-12">{s.num}</div>
                   <div className="flex-1">
                     <div className="text-display-hero text-[clamp(28px,3.8vw,52px)] leading-none uppercase">
                       {s.title} <span className="text-serif-italic text-brand-glow">{s.accent}</span>
@@ -96,7 +96,7 @@ export default function ServiceShowcase() {
                 <div className="text-[10px] tracking-[0.28em] uppercase text-brand-glow">{t("nowViewing")}</div>
                 <div className="text-display-hero text-[30px] leading-none mt-1">{current.title} <span className="text-serif-italic text-white/80">{current.accent}</span></div>
               </div>
-              <div className="text-display-hero text-[46px] text-white/20">{current.num}</div>
+              <div className="text-display-hero text-[46px] leading-none text-white/20">{current.num}</div>
             </div>
           </div>
         </div>

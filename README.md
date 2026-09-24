@@ -55,10 +55,10 @@ The site references local images by exact filenames — replace the placeholder 
 
 ## Business info wired in
 
-- **Address**: Jokivarrentie 12 H 1, 40520 Jyväskylä
+- **Address**: Yritystie 10 A 5, 40320 Jyväskylä
 - **Phone**: 045 182 4414 → `tel:+358451824414`
-- **Email**: joekiuna@yahoo.com
-- **Founder**: Joseph Kiuna Kamau (EureCar-certified master technician)
+- **Email**: jambotek6@gmail.com
+- **Founder**: Joseph Kiuna Kamau (EureCar-certified professional technician)
 - **Tagline**: *Aina valmiina auttamaan* — used throughout
 - **Google Map**: embedded on Contact & LocationCard
 

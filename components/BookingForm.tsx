@@ -104,7 +104,7 @@ export default function BookingForm() {
         <div className="w-14 h-14 mx-auto rounded-full bg-brand grid place-items-center red-glow">
           <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
         </div>
-        <h3 className="text-display-hero text-2xl mt-6">{t("confirmedTitle")}</h3>
+        <h3 className="text-display-hero text-2xl leading-tight mt-6">{t("confirmedTitle")}</h3>
         <p className="text-ink-dim mt-3">{t("confirmedBody", { date: dateFmt, time: confirmed.time })}</p>
         <button
           onClick={() => { setConfirmed(null); setSubmitState("idle"); setSelectedTime(null); loadAvailability(); }}

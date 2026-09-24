@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const MAP_SRC =
-  "https://www.google.com/maps?q=Jokivarrentie%2012%2C%2040520%20Jyv%C3%A4skyl%C3%A4%2C%20Finland&output=embed";
+  "https://www.google.com/maps?q=Yritystie%2010%2C%2040320%20Jyv%C3%A4skyl%C3%A4%2C%20Finland&output=embed";
 
 // The live Google Maps embed pulls ~1.5 MB of JS and re-paints on every scroll
 // frame, so it only loads once the visitor asks for it.
@@ -37,7 +37,7 @@ export default function MapEmbed({
             <circle cx="12" cy="9.5" r="2.5" />
           </svg>
         </span>
-        <span className="text-display-hero text-[clamp(22px,3vw,34px)] leading-none">Jokivarrentie 12 H 1</span>
+        <span className="text-display-hero text-[clamp(22px,3vw,34px)] leading-none">Yritystie 10 A 5</span>
         <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/25 text-[10px] tracking-[0.24em] uppercase font-semibold transition-colors group-hover/map:border-brand group-hover/map:text-brand-glow">
           {loadLabel}
         </span>

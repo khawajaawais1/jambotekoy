@@ -47,8 +47,8 @@ export default async function Footer() {
         <FooterCol title={t("contactTitle")} custom={
           <ul className="grid gap-3 text-sm text-ink-dim">
             <li><a href="tel:+358451824414" className="hover:text-brand-glow">045 182 4414</a></li>
-            <li><a href="mailto:joekiuna@yahoo.com" className="hover:text-brand-glow">joekiuna@yahoo.com</a></li>
-            <li>Jokivarrentie 12 H 1<br />40520 Jyväskylä</li>
+            <li><a href="mailto:jambotek6@gmail.com" className="hover:text-brand-glow">jambotek6@gmail.com</a></li>
+            <li>Yritystie 10 A 5<br />40320 Jyväskylä</li>
           </ul>
         } />
 
@@ -72,7 +72,7 @@ export default async function Footer() {
 function FooterCol({ title, items, custom }: { title: string; items?: [string, string][]; custom?: React.ReactNode }) {
   return (
     <div>
-      <h5 className="text-display-hero text-[13px] tracking-[0.24em] uppercase text-brand-glow mb-5">{title}</h5>
+      <h5 className="text-display-hero text-[13px] leading-tight tracking-[0.24em] uppercase text-brand-glow mb-5">{title}</h5>
       {custom ? custom : (
         <ul className="grid gap-3 text-sm">
           {items?.map(([href, label]) => (

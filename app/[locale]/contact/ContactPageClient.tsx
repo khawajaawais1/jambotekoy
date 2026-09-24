@@ -11,9 +11,9 @@ export default function ContactPageClient() {
   const hoursLines = t("hoursValue").split("\n");
 
   const rows: [string, React.ReactNode][] = [
-    [t("addressLabel"), <span key="a">Jokivarrentie 12 H 1<br />40520 Jyväskylä<br />Finland</span>],
+    [t("addressLabel"), <span key="a">Yritystie 10 A 5<br />40320 Jyväskylä<br />Finland</span>],
     [t("phoneLabel"), <a key="p" href="tel:+358451824414" className="hover:text-brand-glow">045 182 4414</a>],
-    [t("emailLabel"), <a key="e" href="mailto:joekiuna@yahoo.com" className="hover:text-brand-glow">joekiuna@yahoo.com</a>],
+    [t("emailLabel"), <a key="e" href="mailto:jambotek6@gmail.com" className="hover:text-brand-glow">jambotek6@gmail.com</a>],
     [t("hoursLabel"), <span key="h">{hoursLines[0]}<br />{hoursLines[1]}<br />{hoursLines[2]}</span>],
     [t("foundedLabel"), <span key="f">{t("foundedValue")}</span>]
   ];
@@ -47,7 +47,7 @@ export default function ContactPageClient() {
       <section className="py-24" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
         <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
           <div>
-            <h3 className="text-display-hero text-3xl uppercase mb-8">{t("getInTouchPlain")} <span className="text-serif-italic text-brand-glow">{t("getInTouchItalic")}</span></h3>
+            <h3 className="text-display-hero text-3xl leading-tight uppercase mb-8">{t("getInTouchPlain")} <span className="text-serif-italic text-brand-glow">{t("getInTouchItalic")}</span></h3>
             {rows.map(([label, val], i) => (
               <div key={i} className="grid grid-cols-[100px_1fr] items-baseline gap-3 border-b border-white/10 py-5">
                 <div className="text-[10px] tracking-[0.28em] uppercase text-ink-mute">{label}</div>

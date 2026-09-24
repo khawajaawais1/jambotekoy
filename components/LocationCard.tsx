@@ -19,14 +19,14 @@ export default function LocationCard() {
           </h2>
 
           <div className="space-y-6">
-            <Row label={t("addressLabel")} value={<>Jokivarrentie 12 H 1<br />40520 Jyväskylä, Finland</>} />
+            <Row label={t("addressLabel")} value={<>Yritystie 10 A 5<br />40320 Jyväskylä, Finland</>} />
             <Row label={t("phoneLabel")} value={<a href="tel:+358451824414" className="hover:text-brand-glow">045 182 4414</a>} />
-            <Row label={t("emailLabel")} value={<a href="mailto:joekiuna@yahoo.com" className="hover:text-brand-glow">joekiuna@yahoo.com</a>} />
+            <Row label={t("emailLabel")} value={<a href="mailto:jambotek6@gmail.com" className="hover:text-brand-glow">jambotek6@gmail.com</a>} />
             <Row label={t("hoursLabel")} value={<>{hoursLines[0]}<br />{hoursLines[1]}</>} />
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <a href="https://www.google.com/maps?q=Jokivarrentie+12,+40520+Jyväskylä,+Finland" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand text-white text-[11px] tracking-[0.22em] uppercase font-semibold red-glow hover:-translate-y-0.5 transition-transform">
+            <a href="https://www.google.com/maps?q=Yritystie+10,+40320+Jyväskylä,+Finland" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand text-white text-[11px] tracking-[0.22em] uppercase font-semibold red-glow hover:-translate-y-0.5 transition-transform">
               {t("getDirections")}
               <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
             </a>

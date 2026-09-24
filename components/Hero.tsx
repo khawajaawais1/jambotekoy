@@ -81,7 +81,7 @@ export default function Hero() {
             <span className="hidden sm:inline text-ink-mute">{t("est")}</span>
           </div>
 
-          <h1 className="text-display-hero text-[13vw] sm:text-[10vw] lg:text-[9vw] xl:text-[8.6vw]">
+          <h1 className="text-display-hero leading-[0.92] text-[13vw] sm:text-[10vw] lg:text-[9vw] xl:text-[8.6vw]">
             <span className="block overflow-hidden"><span className="inline-block rise-1">{t("line1")}</span></span>
             <span className="block overflow-hidden"><span className="inline-block rise-2">{t("line2")}</span></span>
             <span className="block overflow-hidden">

@@ -21,7 +21,7 @@
   },
   "metaAbout": {
     "title": "Meistä — Jambotek Oy",
-    "description": "Tutustu Jambotek Oy:hyn — jyväskyläläiseen riippumattomaan autokorjaamoon, jonka perusti mestariasentaja Joseph Kiuna Kamau."
+    "description": "Tutustu Jambotek Oy:hyn — jyväskyläläiseen riippumattomaan autokorjaamoon, jonka perusti ammattiasentaja Joseph Kiuna Kamau."
   },
   "metaServices": {
     "title": "Palvelut — Jambotek Oy",
@@ -60,7 +60,7 @@
     "line1": "Rakennettu",
     "line2": "suoriutumaan.",
     "line3": "Kestämään.",
-    "subtitle": "Sertifioitu riippumaton korjaamo eurooppalaisille autoille — vianmääritys, renkaat, linjaus ja täyshuolto mestaritason asentajien tekemänä. Aina valmiina auttamaan.",
+    "subtitle": "Sertifioitu riippumaton korjaamo eurooppalaisille autoille — vianmääritys, renkaat, linjaus ja täyshuolto ammattitaitoisten asentajien tekemänä. Aina valmiina auttamaan.",
     "ctaBook": "Varaa huolto",
     "ctaExplore": "Katso palvelut",
     "openToday": "Avoinna tänään",
@@ -181,12 +181,12 @@
     "heroImageAlt": "Jambotek Oy — korjaamon sisäänkäynti",
     "storyEyebrow": "Tarina",
     "storyHeadlinePlain": "Perustanut",
-    "storyHeadlineItalic": "mestariasentaja.",
-    "p1": "Jambotek Oy perustettiin vuonna <b>2023</b>, kun <b>Joseph Kiuna Kamau</b>, EureCar-sertifioitu mestariasentaja, jolla on yli vuosikymmenen kokemus eurooppalaisista merkeistä, avasi oman korjaamon. Vuosien jälkeen suurempien merkkiliikkeiden palveluksessa Joseph halusi tarjota jotain harvinaista alalla: rehellistä, merkkiliikkeen tasoista työtä riippumattoman korjaamon hinnoilla.",
-    "p2": "Korjaamo sijaitsee modernissa hallissa osoitteessa <b>Jokivarrentie 12, Jyväskylä</b> — ammattinosturit, HPA-pyöränlinjaus, rengasasennus- ja tasapainotuslaitteet sekä diagnostiikkalaitteet BMW:lle, Mercedes-Benzille, VW-konsernille, Volvolle ja muille.",
+    "storyHeadlineItalic": "ammattiasentaja.",
+    "p1": "Jambotek Oy perustettiin vuonna <b>2023</b>, kun <b>Joseph Kiuna Kamau</b>, EureCar-sertifioitu ammattiasentaja, jolla on yli vuosikymmenen kokemus eurooppalaisista merkeistä, avasi oman korjaamon. Vuosien jälkeen suurempien merkkiliikkeiden palveluksessa Joseph halusi tarjota jotain harvinaista alalla: rehellistä, merkkiliikkeen tasoista työtä riippumattoman korjaamon hinnoilla.",
+    "p2": "Korjaamo sijaitsee modernissa hallissa osoitteessa <b>Yritystie 10, Jyväskylä</b> — ammattinosturit, HPA-pyöränlinjaus, rengasasennus- ja tasapainotuslaitteet sekä diagnostiikkalaitteet BMW:lle, Mercedes-Benzille, VW-konsernille, Volvolle ja muille.",
     "p3": "Lupauksemme on yksinkertainen: katsomme auton, kerromme mitä se tarvitsee, annamme tarjouksen ennen kuin aloitamme, ja palautamme sen puhtaampana ja turvallisempana kuin se oli. <em>Aina valmiina auttamaan.</em>",
     "cert1Title": "EureCar",
-    "cert1Desc": "Sertifioitu mestariasentaja (sähkö- ja hybridiautot)",
+    "cert1Desc": "Sertifioitu ammattiasentaja (sähkö- ja hybridiautot)",
     "cert2Title": "AD Finland",
     "cert2Desc": "Hyväksytty verkostokumppani — varaosat & koulutus",
     "cert3Title": "Bosch",
@@ -206,7 +206,7 @@
       { "num": "04", "title": "Pyörän", "accent": "linjaus (HPA)", "body": "4-pyöräinen tietokoneohjattu linjaus HPA-laitteistollamme — kallistus, camber ja caster säädetään tehdasarvoihin.", "price": "alk. 79 €", "meta": "per ajoneuvo" },
       { "num": "05", "title": "Jarrut", "accent": "& levyt", "body": "Palojen ja levyjen uusinta, anturitarkistukset, hydraulinen ilmaus, jarrunesteen vaihto DOT4-spesifikaatioon.", "price": "alk. 149 €", "meta": "per akseli" },
       { "num": "06", "title": "Hihna", "accent": "& ketju", "body": "Koko jakohihnasarjan vaihto mukaan lukien vesipumppu, kiristimet ja välipyörät tarvittaessa.", "price": "tarjouksesta", "meta": "auton mukaan" },
-      { "num": "07", "title": "Jousitus", "accent": "& ohjaus", "body": "Iskunvaimentimet, jouset, olkatapit, palloniveleet, holkit. Hiljainen, suora ja turvallinen — niin kuin pitääkin.", "price": "tarjouksesta", "meta": "tarkastuksen jälkeen" },
+      { "num": "07", "title": "Jousitus", "accent": "& ohjaus", "body": "Iskunvaimentimet, jouset, olkatapit, pallonivelet, holkit. Hiljainen, suora ja turvallinen — niin kuin pitääkin.", "price": "tarjouksesta", "meta": "tarkastuksen jälkeen" },
       { "num": "08", "title": "Ilmastoinnin", "accent": "huolto", "body": "Kylmäaineen talteenotto ja täyttö, vuototarkistus, raitisilmasuodattimen uusinta — R134a ja R1234yf.", "price": "alk. 95 €", "meta": "sis. kaasun" },
       { "num": "09", "title": "Ostoauton", "accent": "tarkastus", "body": "Täysi riippumaton tarkastus harkitsemallesi autolle. Kirjallinen raportti kuvineen ja arvioiduin korjauskustannuksin.", "price": "alk. 120 €", "meta": "raportti sisältyy" }
     ]

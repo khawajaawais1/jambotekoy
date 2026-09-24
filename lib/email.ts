@@ -39,14 +39,14 @@ function customerEmailContent(b: Booking) {
   if (b.locale === "fi") {
     return {
       subject: "Varauksesi on vahvistettu — Jambotek Oy",
-      text: `Hei ${b.name},\n\nVarauksesi on vahvistettu.\n\nAika: ${dateFmt} klo ${b.slot_time}\nPalvelu: ${b.reason}\n${b.vehicle ? `Ajoneuvo: ${b.vehicle}\n` : ""}\nOsoite: Jokivarrentie 12 H 1, 40520 Jyväskylä\nPuhelin: 045 182 4414\n\nNähdään pian!\nJambotek Oy — Aina valmiina auttamaan`,
-      html: `<p>Hei ${b.name},</p><p>Varauksesi on vahvistettu.</p><p><b>Aika:</b> ${dateFmt} klo ${b.slot_time}<br/><b>Palvelu:</b> ${b.reason}${b.vehicle ? `<br/><b>Ajoneuvo:</b> ${b.vehicle}` : ""}</p><p><b>Osoite:</b> Jokivarrentie 12 H 1, 40520 Jyväskylä<br/><b>Puhelin:</b> 045 182 4414</p><p>Nähdään pian!<br/>Jambotek Oy — Aina valmiina auttamaan</p>`
+      text: `Hei ${b.name},\n\nVarauksesi on vahvistettu.\n\nAika: ${dateFmt} klo ${b.slot_time}\nPalvelu: ${b.reason}\n${b.vehicle ? `Ajoneuvo: ${b.vehicle}\n` : ""}\nOsoite: Yritystie 10 A 5, 40320 Jyväskylä\nPuhelin: 045 182 4414\n\nNähdään pian!\nJambotek Oy — Aina valmiina auttamaan`,
+      html: `<p>Hei ${b.name},</p><p>Varauksesi on vahvistettu.</p><p><b>Aika:</b> ${dateFmt} klo ${b.slot_time}<br/><b>Palvelu:</b> ${b.reason}${b.vehicle ? `<br/><b>Ajoneuvo:</b> ${b.vehicle}` : ""}</p><p><b>Osoite:</b> Yritystie 10 A 5, 40320 Jyväskylä<br/><b>Puhelin:</b> 045 182 4414</p><p>Nähdään pian!<br/>Jambotek Oy — Aina valmiina auttamaan</p>`
     };
   }
   return {
     subject: "Your booking is confirmed — Jambotek Oy",
-    text: `Hi ${b.name},\n\nYour booking is confirmed.\n\nWhen: ${dateFmt} at ${b.slot_time}\nService: ${b.reason}\n${b.vehicle ? `Vehicle: ${b.vehicle}\n` : ""}\nAddress: Jokivarrentie 12 H 1, 40520 Jyväskylä, Finland\nPhone: 045 182 4414\n\nSee you soon!\nJambotek Oy`,
-    html: `<p>Hi ${b.name},</p><p>Your booking is confirmed.</p><p><b>When:</b> ${dateFmt} at ${b.slot_time}<br/><b>Service:</b> ${b.reason}${b.vehicle ? `<br/><b>Vehicle:</b> ${b.vehicle}` : ""}</p><p><b>Address:</b> Jokivarrentie 12 H 1, 40520 Jyväskylä, Finland<br/><b>Phone:</b> 045 182 4414</p><p>See you soon!<br/>Jambotek Oy</p>`
+    text: `Hi ${b.name},\n\nYour booking is confirmed.\n\nWhen: ${dateFmt} at ${b.slot_time}\nService: ${b.reason}\n${b.vehicle ? `Vehicle: ${b.vehicle}\n` : ""}\nAddress: Yritystie 10 A 5, 40320 Jyväskylä, Finland\nPhone: 045 182 4414\n\nSee you soon!\nJambotek Oy`,
+    html: `<p>Hi ${b.name},</p><p>Your booking is confirmed.</p><p><b>When:</b> ${dateFmt} at ${b.slot_time}<br/><b>Service:</b> ${b.reason}${b.vehicle ? `<br/><b>Vehicle:</b> ${b.vehicle}` : ""}</p><p><b>Address:</b> Yritystie 10 A 5, 40320 Jyväskylä, Finland<br/><b>Phone:</b> 045 182 4414</p><p>See you soon!<br/>Jambotek Oy</p>`
   };
 }
 
