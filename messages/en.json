@@ -226,6 +226,8 @@
     "hoursValue": "Mon – Fri · 08:00 – 17:00\nSat · By appointment\nSun · Closed",
     "foundedLabel": "Founded",
     "foundedValue": "2023 · Y-tunnus registered",
+    "callBannerEyebrow": "Don't want to fill out the form?",
+    "callBannerBody": "Call the workshop directly — we're happy to help right away.",
     "formNameLabel": "Your name",
     "formNamePlaceholder": "Matti Meikäläinen",
     "formPhoneLabel": "Phone",

@@ -226,6 +226,8 @@
     "hoursValue": "Ma–Pe · 08:00–17:00\nLa · Sopimuksen mukaan\nSu · Suljettu",
     "foundedLabel": "Perustettu",
     "foundedValue": "2023 · Y-tunnus rekisteröity",
+    "callBannerEyebrow": "Et halua täyttää lomaketta?",
+    "callBannerBody": "Soita suoraan korjaamolle — autamme heti.",
     "formNameLabel": "Nimesi",
     "formNamePlaceholder": "Matti Meikäläinen",
     "formPhoneLabel": "Puhelin",

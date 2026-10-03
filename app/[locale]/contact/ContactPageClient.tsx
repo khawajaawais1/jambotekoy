@@ -48,6 +48,28 @@ export default function ContactPageClient() {
       </section>
 
       <section className="py-24" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
+        <div className="max-w-[1500px] mx-auto mb-14">
+          <a
+            href="tel:+358451824414"
+            className="group flex flex-col sm:flex-row items-center sm:items-center justify-between gap-6 p-8 sm:p-10 rounded-[24px] border border-brand/40 bg-[linear-gradient(120deg,rgba(225,29,46,0.14),rgba(225,29,46,0.03))] red-glow hover:border-brand transition-colors"
+          >
+            <div className="flex items-center gap-5 text-center sm:text-left flex-col sm:flex-row">
+              <span className="w-14 h-14 shrink-0 rounded-full bg-brand grid place-items-center red-glow">
+                <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" />
+                </svg>
+              </span>
+              <div>
+                <div className="text-[11px] tracking-[0.28em] uppercase text-brand-glow">{t("callBannerEyebrow")}</div>
+                <div className="text-sm text-ink-dim mt-1">{t("callBannerBody")}</div>
+              </div>
+            </div>
+            <span className="text-display-hero text-[clamp(32px,5vw,52px)] leading-none text-white group-hover:text-brand-glow transition-colors whitespace-nowrap">
+              045 182 4414
+            </span>
+          </a>
+        </div>
+
         <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
           <div>
             <h2 className="text-display-hero text-3xl leading-tight uppercase mb-8">{t("getInTouchPlain")} <span className="text-serif-italic text-brand-glow">{t("getInTouchItalic")}</span></h2>
