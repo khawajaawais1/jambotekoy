@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { routing } from "@/i18n/routing";
-import { SITE_URL, BUSINESS, localizedAlternates, ogLocale } from "@/lib/seo";
+import { SITE_URL, BUSINESS, pageMetadata } from "@/lib/seo";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -25,32 +25,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const { canonical, languages } = localizedAlternates("/", locale);
 
   return {
     metadataBase: new URL(SITE_URL),
+    icons: { icon: "/favicon.png" },
+    robots: { index: true, follow: true },
     // Not using a title template: every page's translated title already
     // ends in "— Jambotek Oy" by hand, so a template would double it up.
-    title: t("title"),
-    description: t("description"),
-    icons: { icon: "/favicon.png" },
-    alternates: { canonical, languages },
-    openGraph: {
-      type: "website",
-      siteName: BUSINESS.name,
-      locale: ogLocale(locale),
-      url: canonical,
-      title: t("title"),
-      description: t("description"),
-      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: BUSINESS.name }]
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: ["/og-image.jpg"]
-    },
-    robots: { index: true, follow: true }
+    ...pageMetadata({ pathname: "/", locale, title: t("title"), description: t("description") })
   };
 }
 

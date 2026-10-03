@@ -8,21 +8,12 @@ import StatsGrid from "@/components/StatsGrid";
 import Testimonials from "@/components/Testimonials";
 import LocationCard from "@/components/LocationCard";
 import BigCTA from "@/components/BigCTA";
-import { getTranslations } from "next-intl/server";
-import { SITE_URL, BUSINESS, localizedAlternates, ogLocale } from "@/lib/seo";
+import { SITE_URL, BUSINESS } from "@/lib/seo";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "meta" });
-  const { canonical, languages } = localizedAlternates("/", locale);
-  return {
-    title: t("title"),
-    description: t("description"),
-    alternates: { canonical, languages },
-    openGraph: { type: "website", url: canonical, locale: ogLocale(locale), title: t("title"), description: t("description") },
-    twitter: { card: "summary_large_image", title: t("title"), description: t("description") }
-  };
-}
+// No generateMetadata here — the root layout's generateMetadata already
+// targets "/" and provides full title/description/OG/canonical for the
+// homepage. A duplicate here would win Next's metadata merge and silently
+// drop fields (like og:image) that aren't re-specified.
 
 function WebsiteJsonLd() {
   const jsonLd = {

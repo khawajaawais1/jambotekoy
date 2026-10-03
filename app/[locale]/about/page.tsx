@@ -3,20 +3,13 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import BigCTA from "@/components/BigCTA";
 import StatsGrid from "@/components/StatsGrid";
-import { localizedAlternates, ogLocale } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metaAbout" });
-  const { canonical, languages } = localizedAlternates("/about", locale);
-  return {
-    title: t("title"),
-    description: t("description"),
-    alternates: { canonical, languages },
-    openGraph: { type: "website", url: canonical, locale: ogLocale(locale), title: t("title"), description: t("description") },
-    twitter: { card: "summary_large_image", title: t("title"), description: t("description") }
-  };
+  return pageMetadata({ pathname: "/about", locale, title: t("title"), description: t("description") });
 }
 
 export default async function AboutPage() {

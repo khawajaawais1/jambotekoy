@@ -58,3 +58,46 @@ export function localizedAlternates(pathname: AppPathname, currentLocale: string
 export function ogLocale(locale: string) {
   return locale === "en" ? "en_US" : "fi_FI";
 }
+
+const OG_IMAGES = [{ url: "/og-image.jpg", width: 1200, height: 630, alt: BUSINESS.name }];
+
+/**
+ * Full per-page metadata block (canonical/hreflang + Open Graph + Twitter).
+ * Next.js's metadata merging REPLACES a parent's `openGraph`/`twitter` object
+ * wholesale when a page defines its own — it does not deep-merge per field —
+ * so every page must re-specify `images` itself or og:image silently
+ * disappears site-wide. Centralized here so that can't happen again.
+ */
+export function pageMetadata({
+  pathname,
+  locale,
+  title,
+  description
+}: {
+  pathname: AppPathname;
+  locale: string;
+  title: string;
+  description: string;
+}) {
+  const { canonical, languages } = localizedAlternates(pathname, locale);
+  return {
+    title,
+    description,
+    alternates: { canonical, languages },
+    openGraph: {
+      type: "website" as const,
+      siteName: BUSINESS.name,
+      url: canonical,
+      locale: ogLocale(locale),
+      title,
+      description,
+      images: OG_IMAGES
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title,
+      description,
+      images: OG_IMAGES.map((i) => i.url)
+    }
+  };
+}
