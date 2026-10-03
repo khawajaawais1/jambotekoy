@@ -8,8 +8,8 @@ node_modules/
 
 # Next.js build output
 .next/
+tsconfig.tsbuildinfo
 
 
 # raw/original media kept locally, not deployed
 source-assets/
-   
