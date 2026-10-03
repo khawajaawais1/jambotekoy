@@ -1,12 +1,21 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import BigCTA from "@/components/BigCTA";
+import { localizedAlternates, ogLocale } from "@/lib/seo";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metaServices" });
-  return { title: t("title"), description: t("description") };
+  const { canonical, languages } = localizedAlternates("/services", locale);
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: { canonical, languages },
+    openGraph: { type: "website", url: canonical, locale: ogLocale(locale), title: t("title"), description: t("description") },
+    twitter: { card: "summary_large_image", title: t("title"), description: t("description") }
+  };
 }
 
 type ServiceItem = { num: string; title: string; accent: string; body: string; price: string; meta: string };
@@ -14,10 +23,12 @@ type ServiceItem = { num: string; title: string; accent: string; body: string; p
 export default async function ServicesPage() {
   const t = await getTranslations("servicesPage");
   const tNav = await getTranslations("nav");
+  const locale = await getLocale();
   const SERVICES = t.raw("list") as ServiceItem[];
 
   return (
     <>
+      <BreadcrumbJsonLd locale={locale} items={[{ name: tNav("home"), path: "/" }, { name: t("breadcrumb"), path: "/services" }]} />
       <section className="pt-[180px] pb-20 relative overflow-hidden bg-[linear-gradient(225deg,#2a0a0d_0%,#0a0a0a_45%,#050505_100%)] border-b border-white/10" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
         <div className="absolute -top-40 left-1/4 w-[700px] h-[500px] rounded-full bg-brand/25 blur-[140px]" />
         <div className="absolute bottom-[-8rem] -right-32 w-[480px] h-[480px] rounded-full bg-brand-glow/15 blur-[130px]" />
@@ -48,9 +59,9 @@ export default async function ServicesPage() {
             <article key={s.num} className="grid grid-cols-1 md:grid-cols-[80px_1fr] items-center gap-6 md:gap-10 p-8 md:p-9 rounded-[20px] border border-white/10 hover:border-brand hover:bg-[linear-gradient(90deg,rgba(225,29,46,0.06),transparent)] transition-colors">
               <div className="text-display-hero text-[40px] text-brand leading-none">{s.num}</div>
               <div>
-                <h3 className="text-display-hero text-[clamp(24px,2.6vw,32px)] uppercase leading-tight">
+                <h2 className="text-display-hero text-[clamp(24px,2.6vw,32px)] uppercase leading-tight">
                   {s.title} <span className="text-serif-italic text-brand-glow">{s.accent}</span>
-                </h3>
+                </h2>
                 <p className="text-ink-dim text-[15px] mt-2">{s.body}</p>
               </div>
             </article>

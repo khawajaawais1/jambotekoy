@@ -122,6 +122,12 @@ function ScrollVersion() {
   return (
     <section ref={ref} className="relative h-[380vh] md:h-[500vh]">
       <div className="sticky top-0 h-[100svh] overflow-hidden noise bg-bg">
+        {/* The cinematic pinned layout has no room for a visible section
+            title, but the heading still needs to exist (and in the right
+            order) for SEO/accessibility — same text as the eyebrow below. */}
+        <h2 className="sr-only">
+          {t("headlinePlain")} {t("headlineItalic")}
+        </h2>
         <div className="absolute inset-0 grid-bg mask-radial opacity-60 pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-64 -left-64 w-[840px] h-[840px] rounded-full bg-[radial-gradient(closest-side,rgba(225,29,46,0.16),transparent)]" />
@@ -245,8 +251,10 @@ function StageCapsule({
     if (mounted && video) videoRef.current?.play().catch(() => {});
   }, [mounted, video]);
 
-  if (!mounted) return null;
-
+  // The stage's title/body text stays mounted at all times (including in the
+  // initial server-rendered HTML) so this content is crawlable without JS —
+  // only the decoded image/video (the actually expensive part) is deferred
+  // via `mounted`, preserving the original scroll-perf optimization.
   return (
     <motion.div
       aria-hidden={!isActive}
@@ -257,7 +265,7 @@ function StageCapsule({
         style={{ scale, x, rotate }}
         className="relative w-[86%] sm:w-full max-w-[560px] sm:max-w-[640px] aspect-[4/5] sm:aspect-[16/10] rounded-[28px] overflow-hidden bg-surface red-glow"
       >
-        {video ? (
+        {mounted && (video ? (
           <video
             ref={videoRef}
             src={video}
@@ -276,7 +284,7 @@ function StageCapsule({
             sizes="(max-width: 1024px) 92vw, 640px"
             className="object-cover"
           />
-        )}
+        ))}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
         {isActive && (
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -326,8 +334,8 @@ function Finale({
     if (mounted) videoRef.current?.play().catch(() => {});
   }, [mounted]);
 
-  if (!mounted) return null;
-
+  // Text and a real <img> poster stay mounted always (crawlable, no-JS
+  // visible); only the <video> itself is deferred behind `mounted`.
   return (
     <motion.div
       aria-hidden={!isActive}
@@ -335,16 +343,26 @@ function Finale({
       className="absolute inset-0 z-10"
     >
       <motion.div style={{ scale }} className="absolute inset-0">
-        <video
-          ref={videoRef}
-          src="/videos/reveal-bmw.mp4"
-          poster="/images/reveal-bmw-poster.webp"
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover object-bottom"
-        />
+        {mounted ? (
+          <video
+            ref={videoRef}
+            src="/videos/reveal-bmw.mp4"
+            poster="/images/reveal-bmw-poster.webp"
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover object-bottom"
+          />
+        ) : (
+          <Image
+            src="/images/reveal-bmw-poster.webp"
+            alt="Jambotek Oy — the finished car"
+            fill
+            sizes="100vw"
+            className="object-cover object-bottom"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
       </motion.div>
       <motion.div

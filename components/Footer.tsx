@@ -72,7 +72,7 @@ export default async function Footer() {
 function FooterCol({ title, items, custom }: { title: string; items?: [string, string][]; custom?: React.ReactNode }) {
   return (
     <div>
-      <h5 className="text-display-hero text-[13px] leading-tight tracking-[0.24em] uppercase text-brand-glow mb-5">{title}</h5>
+      <h2 className="text-display-hero text-[13px] leading-tight tracking-[0.24em] uppercase text-brand-glow mb-5">{title}</h2>
       {custom ? custom : (
         <ul className="grid gap-3 text-sm">
           {items?.map(([href, label]) => (

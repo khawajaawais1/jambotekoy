@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import BookingForm from "@/components/BookingForm";
 import MapEmbed from "@/components/MapEmbed";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 export default function ContactPageClient() {
   const t = useTranslations("contactPage");
   const tNav = useTranslations("nav");
+  const locale = useLocale();
   const hoursLines = t("hoursValue").split("\n");
 
   const rows: [string, React.ReactNode][] = [
@@ -20,6 +22,7 @@ export default function ContactPageClient() {
 
   return (
     <>
+      <BreadcrumbJsonLd locale={locale} items={[{ name: tNav("home"), path: "/" }, { name: t("breadcrumb"), path: "/contact" }]} />
       <section className="pt-[180px] pb-20 relative overflow-hidden bg-[linear-gradient(150deg,#2a0a0d_0%,#0a0a0a_45%,#050505_100%)] border-b border-white/10" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
         <div className="absolute -top-40 left-1/3 w-[700px] h-[500px] rounded-full bg-brand/25 blur-[140px]" />
         <div className="absolute bottom-[-8rem] -right-32 w-[480px] h-[480px] rounded-full bg-brand-glow/15 blur-[130px]" />
@@ -47,7 +50,7 @@ export default function ContactPageClient() {
       <section className="py-24" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
         <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
           <div>
-            <h3 className="text-display-hero text-3xl leading-tight uppercase mb-8">{t("getInTouchPlain")} <span className="text-serif-italic text-brand-glow">{t("getInTouchItalic")}</span></h3>
+            <h2 className="text-display-hero text-3xl leading-tight uppercase mb-8">{t("getInTouchPlain")} <span className="text-serif-italic text-brand-glow">{t("getInTouchItalic")}</span></h2>
             {rows.map(([label, val], i) => (
               <div key={i} className="grid grid-cols-[100px_1fr] items-baseline gap-3 border-b border-white/10 py-5">
                 <div className="text-[10px] tracking-[0.28em] uppercase text-ink-mute">{label}</div>

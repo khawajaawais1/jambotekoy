@@ -1,18 +1,28 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import BigCTA from "@/components/BigCTA";
 import StatsGrid from "@/components/StatsGrid";
+import { localizedAlternates, ogLocale } from "@/lib/seo";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metaAbout" });
-  return { title: t("title"), description: t("description") };
+  const { canonical, languages } = localizedAlternates("/about", locale);
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: { canonical, languages },
+    openGraph: { type: "website", url: canonical, locale: ogLocale(locale), title: t("title"), description: t("description") },
+    twitter: { card: "summary_large_image", title: t("title"), description: t("description") }
+  };
 }
 
 export default async function AboutPage() {
   const t = await getTranslations("aboutPage");
   const tNav = await getTranslations("nav");
+  const locale = await getLocale();
   const certs = [
     [t("cert1Title"), t("cert1Desc")],
     [t("cert2Title"), t("cert2Desc")],
@@ -21,6 +31,7 @@ export default async function AboutPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd locale={locale} items={[{ name: tNav("home"), path: "/" }, { name: t("breadcrumb"), path: "/about" }]} />
       <section className="pt-[180px] pb-20 relative overflow-hidden bg-[linear-gradient(135deg,#2a0a0d_0%,#0a0a0a_45%,#050505_100%)] border-b border-white/10" style={{ paddingInline: "clamp(20px,4vw,48px)" }}>
         <div className="absolute -top-40 right-1/4 w-[700px] h-[500px] rounded-full bg-brand/25 blur-[140px]" />
         <div className="absolute bottom-[-8rem] -left-32 w-[480px] h-[480px] rounded-full bg-brand-glow/15 blur-[130px]" />
