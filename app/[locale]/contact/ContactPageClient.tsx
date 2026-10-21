@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
-import BookingForm from "@/components/BookingForm";
+// import BookingForm from "@/components/BookingForm"; // temporarily disabled — see usage below
 import MapEmbed from "@/components/MapEmbed";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
@@ -70,7 +70,7 @@ export default function ContactPageClient() {
           </a>
         </div>
 
-        <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
+        <div className="max-w-2xl mx-auto">
           <div>
             <h2 className="text-display-hero text-3xl leading-tight uppercase mb-8">{t("getInTouchPlain")} <span className="text-serif-italic text-brand-glow">{t("getInTouchItalic")}</span></h2>
             {rows.map(([label, val], i) => (
@@ -81,7 +81,9 @@ export default function ContactPageClient() {
             ))}
           </div>
 
-          <BookingForm />
+          {/* Booking form temporarily disabled — direct-call banner above is
+              the only contact path for now. Re-enable by restoring this. */}
+          {/* <BookingForm /> */}
         </div>
 
         <div className="relative mt-16 max-w-[1500px] mx-auto aspect-[4/3] sm:aspect-[21/9] rounded-[24px] overflow-hidden border border-white/10">

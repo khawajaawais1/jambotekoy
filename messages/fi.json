@@ -29,7 +29,7 @@
   },
   "metaContact": {
     "title": "Yhteystiedot — Jambotek Oy",
-    "description": "Varaa huoltoaika, kysy lisää tai löydä reitti Jambotek Oy:lle Jyväskylässä."
+    "description": "Soita suoraan Jambotek Oy:lle Jyväskylässä, kysy lisää tai löydä reitti korjaamolle."
   },
   "nav": {
     "home": "Etusivu",
@@ -215,7 +215,7 @@
     "breadcrumb": "Yhteystiedot",
     "headlinePlain": "Viedään sinut",
     "headlineItalic": "tielle.",
-    "intro": "Varaa aika netistä, lähetä sähköpostia tai soita suoraan korjaamolle. Useimmat palvelut voidaan varata 2–3 arkipäivän sisällä.",
+    "intro": "Soita suoraan korjaamolle tai lähetä sähköpostia — autamme sinua nopeasti.",
     "heroImageAlt": "Jambotek Oy — korjaamon sisäänkäynti",
     "getInTouchPlain": "Ota",
     "getInTouchItalic": "yhteyttä.",

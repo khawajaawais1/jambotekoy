@@ -29,7 +29,7 @@
   },
   "metaContact": {
     "title": "Contact — Jambotek Oy",
-    "description": "Book a service, ask a question, or find directions to Jambotek Oy in Jyväskylä."
+    "description": "Call Jambotek Oy directly in Jyväskylä, ask a question, or find directions to the workshop."
   },
   "nav": {
     "home": "Home",
@@ -215,7 +215,7 @@
     "breadcrumb": "Contact",
     "headlinePlain": "Let's get you",
     "headlineItalic": "on the road.",
-    "intro": "Book a slot online, drop us an email, or call the workshop directly. Most services can be booked within 2–3 working days.",
+    "intro": "Call the workshop directly or drop us an email — we'll help you right away.",
     "heroImageAlt": "Jambotek Oy — workshop entrance",
     "getInTouchPlain": "Get",
     "getInTouchItalic": "in touch.",
