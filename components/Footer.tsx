@@ -65,8 +65,19 @@ export default async function Footer() {
         <span>{t("copyright", { year: new Date().getFullYear() })} · {t("businessId")}</span>
         <span>{t("tagline")}</span>
       </div>
-      <div className="max-w-[1500px] mx-auto mt-3 text-[10px] tracking-[0.08em] text-ink-mute/70 text-center sm:text-right">
-        {t("poweredBy")}
+      <div className="max-w-[1500px] mx-auto mt-3 text-[13px] font-bold tracking-[0.04em] text-ink-dim text-center sm:text-right">
+        {t.rich("poweredBy", {
+          link: (chunks) => (
+            <a
+              href="https://happy2tech.fi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-glow hover:text-white transition-colors"
+            >
+              {chunks}
+            </a>
+          )
+        })}
       </div>
     </footer>
   );
