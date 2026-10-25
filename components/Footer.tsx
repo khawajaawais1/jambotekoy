@@ -65,6 +65,9 @@ export default async function Footer() {
         <span>{t("copyright", { year: new Date().getFullYear() })} · {t("businessId")}</span>
         <span>{t("tagline")}</span>
       </div>
+      <div className="max-w-[1500px] mx-auto mt-3 text-[10px] tracking-[0.08em] text-ink-mute/70 text-center sm:text-right">
+        {t("poweredBy")}
+      </div>
     </footer>
   );
 }
